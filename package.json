@@ -11,7 +11,9 @@
         "hdb": "^0.18.3"
     },
     "scripts": {
-        "start": "cds run"
+        "start": "cds run",
+        "watch-managefss": "cds watch --open managefss/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy InnovatorChallenge --delete-services --delete-service-keys"
     },
     "eslintConfig": {
         "extends": "eslint:recommended",
@@ -58,5 +60,11 @@
                 "kind": "hana"
             }
         }
+    },
+    "sapux": [
+        "app/managefss"
+    ],
+    "devDependencies": {
+        "@sap/ux-specification": "^1.100.3"
     }
 }
