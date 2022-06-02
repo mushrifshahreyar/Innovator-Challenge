@@ -8,6 +8,7 @@ modules:
   path: gen/srv
   requires:
   - name: InnovatorChallenge-db
+  - name: uaa_InnovatorChallenge
   provides:
   - name: srv-api
     properties:
@@ -35,6 +36,12 @@ modules:
       forwardAuthToken: true
       name: srv-api
       url: ~{srv-url}
+  - name: undefined-destination-service
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -113,11 +120,20 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: InnovatorChallenge-srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
     service-name: undefined-destination-service
     service-plan: lite
+  requires:
+  - name: srv-api
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true

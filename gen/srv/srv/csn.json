@@ -149,6 +149,61 @@
     },
     "BusinessPartnerService.BusinessPartner": {
       "kind": "entity",
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "ID",
+          "Value": {
+            "=": "ID"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "company_title",
+          "Value": {
+            "=": "company_title"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "company_code",
+          "Value": {
+            "=": "company_code"
+          }
+        }
+      ],
+      "@UI.FieldGroup#GeneratedGroup1.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup1.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "ID",
+          "Value": {
+            "=": "ID"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "company_title",
+          "Value": {
+            "=": "company_title"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "company_code",
+          "Value": {
+            "=": "company_code"
+          }
+        }
+      ],
+      "@UI.Facets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "General Information",
+          "Target": "@UI.FieldGroup#GeneratedGroup1"
+        }
+      ],
       "projection": {
         "from": {
           "ref": [
@@ -302,6 +357,9 @@
           "type": "cds.Integer"
         }
       }
+    },
+    "BusinessPartnerService.test": {
+      "kind": "action"
     }
   },
   "meta": {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:DataServices>
+        <Schema Namespace="BusinessPartnerService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="BusinessPartner" EntityType="BusinessPartnerService.BusinessPartner">
+                    <NavigationPropertyBinding Path="balancesheet_qtr" Target="BalanceSheet_Qtr"/>
+                </EntitySet>
+                <EntitySet Name="BalanceSheet_Qtr" EntityType="BusinessPartnerService.BalanceSheet_Qtr">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="BusinessPartner">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="company_title" Type="Edm.String"/>
+                <Property Name="company_code" Type="Edm.String"/>
+                <NavigationProperty Name="balancesheet_qtr" Type="Collection(BusinessPartnerService.BalanceSheet_Qtr)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="BalanceSheet_Qtr">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="endDate"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="balancesheet_qtr">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="maxAge" Type="Edm.Int32"/>
+                <Property Name="cash" Type="Edm.Int32"/>
+                <Property Name="shortTermInvestments" Type="Edm.Int32"/>
+                <Property Name="netReceivables" Type="Edm.Int32"/>
+                <Property Name="inventory" Type="Edm.Int32"/>
+                <Property Name="otherCurrentAssets" Type="Edm.Int32"/>
+                <Property Name="totalCurrentAssets" Type="Edm.Int32"/>
+                <Property Name="propertyPlantEquipment" Type="Edm.Int32"/>
+                <Property Name="goodWill" Type="Edm.Int32"/>
+                <Property Name="intangibleAssets" Type="Edm.Int32"/>
+                <Property Name="otherAssets" Type="Edm.Int32"/>
+                <Property Name="totalAssets" Type="Edm.Int32"/>
+                <Property Name="accountsPayable" Type="Edm.Int32"/>
+                <Property Name="shortLongTermDebt" Type="Edm.Int32"/>
+                <Property Name="otherCurrentLiab" Type="Edm.Int32"/>
+                <Property Name="longTermDebt" Type="Edm.Int32"/>
+                <Property Name="otherLiab" Type="Edm.Int32"/>
+                <Property Name="minorityInterest" Type="Edm.Int32"/>
+                <Property Name="totalCurrentLiabilities" Type="Edm.Int32"/>
+                <Property Name="totalLiab" Type="Edm.Int32"/>
+                <Property Name="commonStock" Type="Edm.Int32"/>
+                <Property Name="retainedEarnings" Type="Edm.Int32"/>
+                <Property Name="treasuryStock" Type="Edm.Int32"/>
+                <Property Name="capitalSurplus" Type="Edm.Int32"/>
+                <Property Name="otherStockholderEquity" Type="Edm.Int32"/>
+                <Property Name="totalStockholderEquity" Type="Edm.Int32"/>
+                <Property Name="netTangibleAssets" Type="Edm.Int32"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
