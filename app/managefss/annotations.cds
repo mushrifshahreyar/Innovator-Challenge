@@ -25,56 +25,6 @@ annotate service.BusinessPartner with @(
     ],
 );
 
-// annotate service.BusinessPartner with @(
-//     UI.FieldGroup #GeneratedGroup1 : {
-//         $Type : 'UI.FieldGroupType',
-//         Data : [
-//             {
-//                 $Type : 'UI.DataField',
-//                 Label : 'ID',
-//                 Value : ID,
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Label : 'Company Title',
-//                 Value : company_title,
-//             },
-//             {
-//                 $Type : 'UI.DataField',
-//                 Label : 'Company Code',
-//                 Value : company_code,
-//             },
-//         ],
-//     },
-
-    // UI.FieldGroup #BalanceSheetQtr : {
-    //     $Type : 'UI.FieldGroupType',
-    //     Data : [
-    //         {
-    //             $Type : 'UI.DataField',
-    //             Label : 'ID',
-    //         }
-    //     ]
-    // },
-    
-    // UI.Facets : [
-    //     {
-    //         $Type : 'UI.ReferenceFacet',
-    //         ID : 'GeneratedFacet1',
-    //         Label : 'General Information',
-    //         Target : '@UI.FieldGroup#GeneratedGroup1',
-    //     },
-    // ]
-//     UI.HeaderFacets : [
-//         {
-//             $Type  : 'UI.ReferenceFacet',
-//             ID     : 'GeneratedFacet1',
-//             Label  : 'Company Details',
-//             Target : '@UI.FieldGroup#GeneratedGroup1'
-//         }
-//     ]
-// );
-
 annotate service.BusinessPartner with @(
     UI.HeaderInfo: {
         Title : {
@@ -90,7 +40,7 @@ annotate service.BusinessPartner with @(
         TypeName : 'Business Partner',
         TypeNamePlural : 'Business Partners',
 
-        ImageUrl : 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+        ImageUrl : 'https://i.pinimg.com/originals/03/32/88/033288573e174c88f2f3b3c789b75212.jpg',
     },
 
     UI.FieldGroup #GeneratedGroup1 : {
