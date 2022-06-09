@@ -62,7 +62,6 @@
     }
   },
   "sapux": [
-    "app/managefss",
     "app/managefss"
   ],
   "devDependencies": {

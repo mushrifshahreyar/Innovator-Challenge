@@ -159,19 +159,43 @@
         },
         {
           "$Type": "UI.DataField",
-          "Label": "company_title",
+          "Label": "Company Title",
           "Value": {
             "=": "company_title"
           }
         },
         {
           "$Type": "UI.DataField",
-          "Label": "company_code",
+          "Label": "Company Code",
           "Value": {
             "=": "company_code"
           }
         }
       ],
+      "@UI.SelectionFields": [
+        {
+          "=": "ID"
+        },
+        {
+          "=": "company_code"
+        },
+        {
+          "=": "company_title"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Label": "Company Title",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "company_title"
+      },
+      "@UI.HeaderInfo.Description.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Description.Label": "Company Code",
+      "@UI.HeaderInfo.Description.Value": {
+        "=": "company_code"
+      },
+      "@UI.HeaderInfo.TypeName": "Business Partner",
+      "@UI.HeaderInfo.TypeNamePlural": "Business Partners",
+      "@UI.HeaderInfo.ImageUrl": "https://i.pinimg.com/originals/03/32/88/033288573e174c88f2f3b3c789b75212.jpg",
       "@UI.FieldGroup#GeneratedGroup1.$Type": "UI.FieldGroupType",
       "@UI.FieldGroup#GeneratedGroup1.Data": [
         {
@@ -183,25 +207,38 @@
         },
         {
           "$Type": "UI.DataField",
-          "Label": "company_title",
+          "Label": "Company Title",
           "Value": {
             "=": "company_title"
           }
         },
         {
           "$Type": "UI.DataField",
-          "Label": "company_code",
+          "Label": "Company Code",
           "Value": {
             "=": "company_code"
           }
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Label": "Import Balance Sheet",
+          "Action": "BusinessPartnerService.UpdateBalanceSheet"
+        }
+      ],
+      "@UI.HeaderFacets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "GeneratedFacet1",
+          "Label": "Company Details",
+          "Target": "@UI.FieldGroup#GeneratedGroup1"
         }
       ],
       "@UI.Facets": [
         {
           "$Type": "UI.ReferenceFacet",
-          "ID": "GeneratedFacet1",
-          "Label": "General Information",
-          "Target": "@UI.FieldGroup#GeneratedGroup1"
+          "Label": "Balance Sheet Quaterly",
+          "ID": "BalanceSheetQuaterly",
+          "Target": "balancesheet_qtr/@UI.LineItem#BalanceSheetQuaterly"
         }
       ],
       "projection": {
@@ -217,9 +254,11 @@
           "type": "cds.Integer"
         },
         "company_title": {
+          "@Common.Label": "Company Title",
           "type": "cds.String"
         },
         "company_code": {
+          "@Common.Label": "Company Code",
           "type": "cds.String"
         },
         "balancesheet_qtr": {
@@ -247,6 +286,99 @@
     },
     "BusinessPartnerService.BalanceSheet_Qtr": {
       "kind": "entity",
+      "@UI.LineItem#BalanceSheetQuaterly": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "shortTermInvestments"
+          },
+          "Label": "Short Term Investment"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netReceivables"
+          },
+          "Label": "Net Receivables"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "inventory"
+          },
+          "Label": "Inventory"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalCurrentAssets"
+          },
+          "Label": "Total Current Assets"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "goodWill"
+          },
+          "Label": "Good Will"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalAssets"
+          },
+          "Label": "Total Assets"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "accountsPayable"
+          },
+          "Label": "Accounts Payable"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "shortLongTermDebt"
+          },
+          "Label": "Short Long Term Debt"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "longTermDebt"
+          },
+          "Label": "Long Term Debt"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalCurrentLiabilities"
+          },
+          "Label": "Total Current Liabilities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalLiab"
+          },
+          "Label": "Total Liab"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "retainedEarnings"
+          },
+          "Label": "Retained Earnings"
+        }
+      ],
       "projection": {
         "from": {
           "ref": [
@@ -358,7 +490,7 @@
         }
       }
     },
-    "BusinessPartnerService.test": {
+    "BusinessPartnerService.UpdateBalanceSheet": {
       "kind": "action"
     }
   },
