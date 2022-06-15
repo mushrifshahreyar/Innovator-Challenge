@@ -34,6 +34,27 @@
               ]
             }
           ]
+        },
+        "cashflowstatements_qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "app.businesspartner.CashflowStatements_Qtr",
+          "on": [
+            {
+              "ref": [
+                "cashflowstatements_qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       }
     },
@@ -64,25 +85,25 @@
           "type": "cds.Integer"
         },
         "cash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortTermInvestments": {
           "type": "cds.Integer"
         },
         "netReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "inventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentAssets": {
           "type": "cds.Integer"
         },
         "totalCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "propertyPlantEquipment": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "goodWill": {
           "type": "cds.Integer"
@@ -91,54 +112,133 @@
           "type": "cds.Integer"
         },
         "otherAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "accountsPayable": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortLongTermDebt": {
           "type": "cds.Integer"
         },
         "otherCurrentLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "longTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "minorityInterest": {
           "type": "cds.Integer"
         },
         "totalCurrentLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "commonStock": {
           "type": "cds.Integer"
         },
         "retainedEarnings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "treasuryStock": {
           "type": "cds.Integer"
         },
         "capitalSurplus": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherStockholderEquity": {
           "type": "cds.Integer"
         },
         "totalStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netTangibleAssets": {
+          "type": "cds.Integer64"
+        }
+      }
+    },
+    "app.businesspartner.CashflowStatements_Qtr": {
+      "kind": "entity",
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "app.businesspartner.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "maxAge": {
+          "type": "cds.Integer"
+        },
+        "netIncome": {
+          "type": "cds.Integer"
+        },
+        "depreciation": {
+          "type": "cds.Integer"
+        },
+        "changeToNetincome": {
+          "type": "cds.Integer"
+        },
+        "changeToAccountReceivables": {
+          "type": "cds.Integer"
+        },
+        "changeToLiabilities": {
+          "type": "cds.Integer"
+        },
+        "changeToInventory": {
+          "type": "cds.Integer"
+        },
+        "changeToOperatingActivities": {
+          "type": "cds.Integer"
+        },
+        "totalCashFromOperatingActivities": {
+          "type": "cds.Integer"
+        },
+        "capitalExpenditures": {
+          "type": "cds.Integer"
+        },
+        "investments": {
+          "type": "cds.Integer"
+        },
+        "totalCashflowsFromInvestingActivities": {
+          "type": "cds.Integer"
+        },
+        "netBorrowings": {
+          "type": "cds.Integer"
+        },
+        "otherCashflowsFromFinancingActivities": {
+          "type": "cds.Integer"
+        },
+        "totalCashFromFinancingActivities": {
+          "type": "cds.Integer"
+        },
+        "effectOfExchangeRate": {
+          "type": "cds.Integer"
+        },
+        "changeInCash": {
+          "type": "cds.Integer"
+        },
+        "issuanceOfStock": {
           "type": "cds.Integer"
         }
       }
@@ -218,11 +318,6 @@
           "Value": {
             "=": "company_code"
           }
-        },
-        {
-          "$Type": "UI.DataFieldForAction",
-          "Label": "Import Balance Sheet",
-          "Action": "BusinessPartnerService.UpdateBalanceSheet"
         }
       ],
       "@UI.HeaderFacets": [
@@ -233,12 +328,28 @@
           "Target": "@UI.FieldGroup#GeneratedGroup1"
         }
       ],
+      "@UI.Identification": [
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Label": "Import Financial Data",
+          "Action": "BusinessPartnerService.EntityContainer/UpdateBalanceSheet",
+          "@UI.Importance": {
+            "#": "High"
+          }
+        }
+      ],
       "@UI.Facets": [
         {
           "$Type": "UI.ReferenceFacet",
           "Label": "Balance Sheet Quaterly",
-          "ID": "BalanceSheetQuaterly",
+          "ID": "BalanceSheetQuaterly1",
           "Target": "balancesheet_qtr/@UI.LineItem#BalanceSheetQuaterly"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "CashFlowStatements Quaterly",
+          "ID": "CashflowStatementsQuaterly1",
+          "Target": "cashflowstatements_qtr/@UI.LineItem#CashflowStatementsQuaterly"
         }
       ],
       "projection": {
@@ -271,6 +382,27 @@
             {
               "ref": [
                 "balancesheet_qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        },
+        "cashflowstatements_qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "BusinessPartnerService.CashflowStatements_Qtr",
+          "on": [
+            {
+              "ref": [
+                "cashflowstatements_qtr",
                 "Company_header"
               ]
             },
@@ -411,25 +543,25 @@
           "type": "cds.Integer"
         },
         "cash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortTermInvestments": {
           "type": "cds.Integer"
         },
         "netReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "inventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentAssets": {
           "type": "cds.Integer"
         },
         "totalCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "propertyPlantEquipment": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "goodWill": {
           "type": "cds.Integer"
@@ -438,54 +570,268 @@
           "type": "cds.Integer"
         },
         "otherAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "accountsPayable": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortLongTermDebt": {
           "type": "cds.Integer"
         },
         "otherCurrentLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "longTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "minorityInterest": {
           "type": "cds.Integer"
         },
         "totalCurrentLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "commonStock": {
           "type": "cds.Integer"
         },
         "retainedEarnings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "treasuryStock": {
           "type": "cds.Integer"
         },
         "capitalSurplus": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherStockholderEquity": {
           "type": "cds.Integer"
         },
         "totalStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netTangibleAssets": {
+          "type": "cds.Integer64"
+        }
+      }
+    },
+    "BusinessPartnerService.CashflowStatements_Qtr": {
+      "kind": "entity",
+      "@UI.LineItem#CashflowStatementsQuaterly": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netIncome"
+          },
+          "Label": "Net Income"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "depreciation"
+          },
+          "Label": "Depreciation"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeToNetincome"
+          },
+          "Label": "Change To NetIncome"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeToAccountReceivables"
+          },
+          "Label": "Change To Account Receivables"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeToLiabilities"
+          },
+          "Label": "Change To Liabilities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeToInventory"
+          },
+          "Label": "Change To Inventory"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeToOperatingActivities"
+          },
+          "Label": "Change To Operating Activities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalCashFromOperatingActivities"
+          },
+          "Label": "Total Cash from Operating Activities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "capitalExpenditures"
+          },
+          "Label": "Capital Expentitures"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "investments"
+          },
+          "Label": "Investments"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalCashflowsFromInvestingActivities"
+          },
+          "Label": "Total Cash Flows From Investing Activities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netBorrowings"
+          },
+          "Label": "Net Borrowings"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "otherCashflowsFromFinancingActivities"
+          },
+          "Label": "Other Cash Flows From Financing Activities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalCashFromFinancingActivities"
+          },
+          "Label": "Total Cash From Financing Activities"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "effectOfExchangeRate"
+          },
+          "Label": "Effect Of Exchange Rate"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "changeInCash"
+          },
+          "Label": "Change In Cash"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "issuanceOfStock"
+          },
+          "Label": "Issuance Of Stock"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "app.businesspartner.CashflowStatements_Qtr"
+          ]
+        }
+      },
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "BusinessPartnerService.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "maxAge": {
+          "type": "cds.Integer"
+        },
+        "netIncome": {
+          "type": "cds.Integer"
+        },
+        "depreciation": {
+          "type": "cds.Integer"
+        },
+        "changeToNetincome": {
+          "type": "cds.Integer"
+        },
+        "changeToAccountReceivables": {
+          "type": "cds.Integer"
+        },
+        "changeToLiabilities": {
+          "type": "cds.Integer"
+        },
+        "changeToInventory": {
+          "type": "cds.Integer"
+        },
+        "changeToOperatingActivities": {
+          "type": "cds.Integer"
+        },
+        "totalCashFromOperatingActivities": {
+          "type": "cds.Integer"
+        },
+        "capitalExpenditures": {
+          "type": "cds.Integer"
+        },
+        "investments": {
+          "type": "cds.Integer"
+        },
+        "totalCashflowsFromInvestingActivities": {
+          "type": "cds.Integer"
+        },
+        "netBorrowings": {
+          "type": "cds.Integer"
+        },
+        "otherCashflowsFromFinancingActivities": {
+          "type": "cds.Integer"
+        },
+        "totalCashFromFinancingActivities": {
+          "type": "cds.Integer"
+        },
+        "effectOfExchangeRate": {
+          "type": "cds.Integer"
+        },
+        "changeInCash": {
+          "type": "cds.Integer"
+        },
+        "issuanceOfStock": {
           "type": "cds.Integer"
         }
       }

@@ -5,5 +5,6 @@ COLUMN TABLE app_businesspartner_BusinessPartner (
   company_code NVARCHAR(5000),
   PRIMARY KEY(ID)
 ) WITH ASSOCIATIONS (
-  MANY TO MANY JOIN app_businesspartner_BalanceSheet_Qtr AS balancesheet_qtr ON (balancesheet_qtr.Company_header_ID = ID)
+  MANY TO MANY JOIN app_businesspartner_BalanceSheet_Qtr AS balancesheet_qtr ON (balancesheet_qtr.Company_header_ID = ID),
+  MANY TO MANY JOIN app_businesspartner_CashflowStatements_Qtr AS cashflowstatements_qtr ON (cashflowstatements_qtr.Company_header_ID = ID)
 )
