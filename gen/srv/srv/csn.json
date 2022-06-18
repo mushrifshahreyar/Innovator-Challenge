@@ -188,58 +188,58 @@
           "type": "cds.Timestamp"
         },
         "maxAge": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netIncome": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "depreciation": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToNetincome": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToAccountReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToInventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToOperatingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashFromOperatingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "capitalExpenditures": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "investments": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashflowsFromInvestingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netBorrowings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCashflowsFromFinancingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashFromFinancingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "effectOfExchangeRate": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeInCash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "issuanceOfStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         }
       }
     },
@@ -347,7 +347,7 @@
         },
         {
           "$Type": "UI.ReferenceFacet",
-          "Label": "CashFlowStatements Quaterly",
+          "Label": "CashFlow Statements Quaterly",
           "ID": "CashflowStatementsQuaterly1",
           "Target": "cashflowstatements_qtr/@UI.LineItem#CashflowStatementsQuaterly"
         }
@@ -781,58 +781,58 @@
           "type": "cds.Timestamp"
         },
         "maxAge": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netIncome": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "depreciation": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToNetincome": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToAccountReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToInventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeToOperatingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashFromOperatingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "capitalExpenditures": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "investments": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashflowsFromInvestingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netBorrowings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCashflowsFromFinancingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCashFromFinancingActivities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "effectOfExchangeRate": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "changeInCash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "issuanceOfStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         }
       }
     },

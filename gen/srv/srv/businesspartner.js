@@ -12,7 +12,7 @@ function readFile() {
 async function saveBalanceSheetQtr(BalanceSheetQtr) {
     BalanceSheetQtr = BalanceSheetQtr.balanceSheetHistoryQuarterly.balanceSheetStatements;
     
-    var ID = 200;
+    var ID = 300;
     for(var data of BalanceSheetQtr) {
         data['ID'] = ID;
         data['COMPANY_HEADER_ID'] = 1;
@@ -20,6 +20,8 @@ async function saveBalanceSheetQtr(BalanceSheetQtr) {
     }
     const db = await cds.connect.to("db");
     const {BalanceSheet_Qtr} = db.entities;
+    db.run(DELETE.from(BalanceSheet_Qtr));
+    db.tx().commit();
     db.run(INSERT.into(BalanceSheet_Qtr, BalanceSheetQtr));
     db.tx().commit();
     
