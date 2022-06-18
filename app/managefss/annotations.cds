@@ -85,6 +85,12 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     Label  : 'Balance Sheet Quaterly',
     ID     : 'BalanceSheetQuaterly1',
     Target : 'balancesheet_qtr/@UI.LineItem#BalanceSheetQuaterly',
+},
+{
+    $Type  : 'UI.ReferenceFacet',
+    Label  : 'CashFlow Statements Quaterly',
+    ID     : 'CashflowStatementsQuaterly1',
+    Target : 'cashflowstatements_qtr/@UI.LineItem#CashflowStatementsQuaterly',
 }, ]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
@@ -154,6 +160,99 @@ annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
         Label : 'Retained Earnings',
     },
 
+]);
+
+annotate service.CashflowStatements_Qtr with @(UI.LineItem #CashflowStatementsQuaterly : [
+    {
+        $Type : 'UI.DataField',
+        Value : ID,
+        Label : 'ID',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netIncome,
+        Label : 'Net Income',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : depreciation,
+        Label : 'Depreciation',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeToNetincome,
+        Label : 'Change To NetIncome',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeToAccountReceivables,
+        Label : 'Change To Account Receivables',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeToLiabilities,
+        Label : 'Change To Liabilities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeToInventory,
+        Label : 'Change To Inventory',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeToOperatingActivities,
+        Label : 'Change To Operating Activities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalCashFromOperatingActivities,
+        Label : 'Total Cash from Operating Activities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : capitalExpenditures,
+        Label : 'Capital Expentitures',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : investments,
+        Label : 'Investments',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalCashflowsFromInvestingActivities,
+        Label : 'Total Cash Flows From Investing Activities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netBorrowings,
+        Label : 'Net Borrowings',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : otherCashflowsFromFinancingActivities,
+        Label : 'Other Cash Flows From Financing Activities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalCashFromFinancingActivities,
+        Label : 'Total Cash From Financing Activities',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : effectOfExchangeRate,
+        Label : 'Effect Of Exchange Rate',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : changeInCash,
+        Label : 'Change In Cash',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : issuanceOfStock,
+        Label : 'Issuance Of Stock',
+    },
 ]);
 
 annotate service.BusinessPartner with {
