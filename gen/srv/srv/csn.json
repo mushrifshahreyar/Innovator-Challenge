@@ -61,85 +61,85 @@
           "type": "cds.Timestamp"
         },
         "maxAge": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "cash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortTermInvestments": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "inventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "propertyPlantEquipment": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "goodWill": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "intangibleAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "accountsPayable": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortLongTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "longTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "minorityInterest": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCurrentLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "commonStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "retainedEarnings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "treasuryStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "capitalSurplus": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netTangibleAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         }
       }
     },
@@ -218,11 +218,6 @@
           "Value": {
             "=": "company_code"
           }
-        },
-        {
-          "$Type": "UI.DataFieldForAction",
-          "Label": "Import Balance Sheet",
-          "Action": "BusinessPartnerService.UpdateBalanceSheet"
         }
       ],
       "@UI.HeaderFacets": [
@@ -233,11 +228,21 @@
           "Target": "@UI.FieldGroup#GeneratedGroup1"
         }
       ],
+      "@UI.Identification": [
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Label": "Import Financial Data",
+          "Action": "BusinessPartnerService.EntityContainer/UpdateBalanceSheet",
+          "@UI.Importance": {
+            "#": "High"
+          }
+        }
+      ],
       "@UI.Facets": [
         {
           "$Type": "UI.ReferenceFacet",
           "Label": "Balance Sheet Quaterly",
-          "ID": "BalanceSheetQuaterly",
+          "ID": "BalanceSheetQuaterly1",
           "Target": "balancesheet_qtr/@UI.LineItem#BalanceSheetQuaterly"
         }
       ],
@@ -408,85 +413,85 @@
           "type": "cds.Timestamp"
         },
         "maxAge": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "cash": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortTermInvestments": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netReceivables": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "inventory": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCurrentAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "propertyPlantEquipment": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "goodWill": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "intangibleAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "accountsPayable": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "shortLongTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherCurrentLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "longTermDebt": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "minorityInterest": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalCurrentLiabilities": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalLiab": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "commonStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "retainedEarnings": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "treasuryStock": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "capitalSurplus": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "otherStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "totalStockholderEquity": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         },
         "netTangibleAssets": {
-          "type": "cds.Integer"
+          "type": "cds.Integer64"
         }
       }
     },
