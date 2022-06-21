@@ -91,7 +91,14 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     Label  : 'CashFlow Statements Quaterly',
     ID     : 'CashflowStatementsQuaterly1',
     Target : 'cashflowstatements_qtr/@UI.LineItem#CashflowStatementsQuaterly',
-}, ]);
+},
+{
+    $Type  : 'UI.ReferenceFacet',
+    Label  : 'Income Statements Quaterly',
+    ID     : 'IncomeStatementsQuaterly1',
+    Target : 'incomestatements_qtr/@UI.LineItem#IncomeStatementsQuaterly',
+},
+]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
     {
@@ -251,6 +258,119 @@ annotate service.CashflowStatements_Qtr with @(UI.LineItem #CashflowStatementsQu
     {
         $Type : 'UI.DataField',
         Value : issuanceOfStock,
+        Label : 'Issuance Of Stock',
+    },
+]);
+
+annotate service.IncomeStatements_Qtr with @(UI.LineItem #IncomeStatementsQuaterly : [
+    {
+        $Type : 'UI.DataField',
+        Value : ID,
+        Label : 'ID',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalRevenue,
+        Label : 'Total Revenue',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : costOfRevenue,
+        Label : 'Cost of Revenue',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : grossProfit,
+        Label : 'Gross Profit',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : sellingGeneralAdministrative,
+        Label : 'Selling General Admin',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : nonRecurring,
+        Label : 'Non Recurring',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : otherOperatingExpenses,
+        Label : 'Other Operating Expenses',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalOperatingExpenses,
+        Label : 'Total Operating Expenses',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : operatingIncome,
+        Label : 'Operating Income',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalOtherIncomeExpenseNet,
+        Label : 'Total Other Income Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : ebit,
+        Label : 'EBit',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : interestExpense,
+        Label : 'Interest Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : incomeBeforeTax,
+        Label : 'Income Before Tax',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : incomeTaxExpense,
+        Label : 'Income Tax Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : minorityInterest,
+        Label : 'Minority Interest',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netIncomeFromContinuingOps,
+        Label : 'Effect Of Exchange Rate',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : discontinuedOperations,
+        Label : 'Change In Cash',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : extraordinaryItems,
+        Label : 'Issuance Of Stock',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : effectOfAccountingCharges,
+        Label : 'Issuance Of Stock',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : otherItems,
+        Label : 'Issuance Of Stock',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netIncome,
+        Label : 'Issuance Of Stock',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netIncomeApplicableToCommonShares,
         Label : 'Issuance Of Stock',
     },
 ]);

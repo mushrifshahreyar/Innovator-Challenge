@@ -53,7 +53,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.101.0",
             "libs": {
@@ -98,17 +98,12 @@
                 {
                     "pattern": ":?query:",
                     "name": "BusinessPartnerList",
-                    "target": [
-                        "BusinessPartnerList"
-                    ]
+                    "target": "BusinessPartnerList"
                 },
                 {
                     "pattern": "BusinessPartner({key}):?query:",
                     "name": "BusinessPartnerObjectPage",
-                    "target": [
-                        "BusinessPartnerList",
-                        "BusinessPartnerObjectPage"
-                    ]
+                    "target": "BusinessPartnerObjectPage"
                 }
             ],
             "targets": {
@@ -128,9 +123,7 @@
                                 }
                             }
                         }
-                    },
-                    "controlAggregation": "beginColumnPages",
-                    "contextPattern": ""
+                    }
                 },
                 "BusinessPartnerObjectPage": {
                     "type": "Component",
@@ -142,24 +135,10 @@
                             "entitySet": "BusinessPartner",
                             "navigation": {}
                         }
-                    },
-                    "controlAggregation": "midColumnPages",
-                    "contextPattern": "/BusinessPartner({key})"
+                    }
                 }
             },
-            "config": {
-                "flexibleColumnLayout": {
-                    "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
-                    "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
-                },
-                "routerClass": "sap.f.routing.Router"
-            }
-        },
-        "rootView": {
-            "viewName": "sap.fe.templates.RootContainer.view.Fcl",
-            "type": "XML",
-            "async": true,
-            "id": "appRootView"
+            "config": {}
         }
     },
     "sap.fiori": {

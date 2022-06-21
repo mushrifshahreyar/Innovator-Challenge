@@ -12,7 +12,7 @@ function readFile() {
 async function saveBalanceSheetQtr(BalanceSheetQtr) {
     BalanceSheetQtr = BalanceSheetQtr.balanceSheetHistoryQuarterly.balanceSheetStatements;
     
-    var ID = 300;
+    var ID = 400;
     for(var data of BalanceSheetQtr) {
         data['ID'] = ID;
         data['COMPANY_HEADER_ID'] = 1;

@@ -243,6 +243,100 @@
         }
       }
     },
+    "app.businesspartner.IncomeStatements_Qtr": {
+      "kind": "entity",
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "app.businesspartner.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "maxAge": {
+          "type": "cds.Integer64"
+        },
+        "totalRevenue": {
+          "type": "cds.Integer64"
+        },
+        "costOfRevenue": {
+          "type": "cds.Integer64"
+        },
+        "grossProfit": {
+          "type": "cds.Integer64"
+        },
+        "researchDevelopment": {
+          "type": "cds.Integer64"
+        },
+        "sellingGeneralAdministrative": {
+          "type": "cds.Integer64"
+        },
+        "nonRecurring": {
+          "type": "cds.Integer64"
+        },
+        "otherOperatingExpenses": {
+          "type": "cds.Integer64"
+        },
+        "totalOperatingExpenses": {
+          "type": "cds.Integer64"
+        },
+        "operatingIncome": {
+          "type": "cds.Integer64"
+        },
+        "totalOtherIncomeExpenseNet": {
+          "type": "cds.Integer64"
+        },
+        "ebit": {
+          "type": "cds.Integer64"
+        },
+        "interestExpense": {
+          "type": "cds.Integer64"
+        },
+        "incomeBeforeTax": {
+          "type": "cds.Integer64"
+        },
+        "incomeTaxExpense": {
+          "type": "cds.Integer64"
+        },
+        "minorityInterest": {
+          "type": "cds.Integer64"
+        },
+        "netIncomeFromContinuingOps": {
+          "type": "cds.Integer64"
+        },
+        "discontinuedOperations": {
+          "type": "cds.Integer64"
+        },
+        "extraordinaryItems": {
+          "type": "cds.Integer64"
+        },
+        "effectOfAccountingCharges": {
+          "type": "cds.Integer64"
+        },
+        "otherItems": {
+          "type": "cds.Integer64"
+        },
+        "netIncome": {
+          "type": "cds.Integer64"
+        },
+        "netIncomeApplicableToCommonShares": {
+          "type": "cds.Integer64"
+        }
+      }
+    },
     "BusinessPartnerService": {
       "@source": "srv/businesspartner.cds",
       "kind": "service"
@@ -832,6 +926,263 @@
           "type": "cds.Integer64"
         },
         "issuanceOfStock": {
+          "type": "cds.Integer64"
+        }
+      }
+    },
+    "BusinessPartnerService.IncomeStatements_Qtr": {
+      "kind": "entity",
+      "@UI.LineItem#IncomeStmtQuaterly": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ID"
+          },
+          "Label": "ID"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalRevenue"
+          },
+          "Label": "Total Revenue"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "costOfRevenue"
+          },
+          "Label": "Cost of Revenue"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "grossProfit"
+          },
+          "Label": "Gross Profit"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "sellingGeneralAdministrative"
+          },
+          "Label": "Selling General Admin"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "nonRecurring"
+          },
+          "Label": "Non Recurring"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "otherOperatingExpenses"
+          },
+          "Label": "Other Operating Expenses"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalOperatingExpenses"
+          },
+          "Label": "Total Operating Expenses"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "operatingIncome"
+          },
+          "Label": "Operating Income"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalOtherIncomeExpenseNet"
+          },
+          "Label": "Total Other Income Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ebit"
+          },
+          "Label": "EBit"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "interestExpense"
+          },
+          "Label": "Interest Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "incomeBeforeTax"
+          },
+          "Label": "Income Before Tax"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "incomeTaxExpense"
+          },
+          "Label": "Income Tax Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "minorityInterest"
+          },
+          "Label": "Minority Interest"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netIncomeFromContinuingOps"
+          },
+          "Label": "Effect Of Exchange Rate"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "discontinuedOperations"
+          },
+          "Label": "Change In Cash"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "extraordinaryItems"
+          },
+          "Label": "Issuance Of Stock"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "effectOfAccountingCharges"
+          },
+          "Label": "Issuance Of Stock"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "otherItems"
+          },
+          "Label": "Issuance Of Stock"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netIncome"
+          },
+          "Label": "Issuance Of Stock"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netIncomeApplicableToCommonShares"
+          },
+          "Label": "Issuance Of Stock"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "app.businesspartner.IncomeStatements_Qtr"
+          ]
+        }
+      },
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "BusinessPartnerService.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "ID": {
+          "key": true,
+          "type": "cds.Integer"
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "maxAge": {
+          "type": "cds.Integer64"
+        },
+        "totalRevenue": {
+          "type": "cds.Integer64"
+        },
+        "costOfRevenue": {
+          "type": "cds.Integer64"
+        },
+        "grossProfit": {
+          "type": "cds.Integer64"
+        },
+        "researchDevelopment": {
+          "type": "cds.Integer64"
+        },
+        "sellingGeneralAdministrative": {
+          "type": "cds.Integer64"
+        },
+        "nonRecurring": {
+          "type": "cds.Integer64"
+        },
+        "otherOperatingExpenses": {
+          "type": "cds.Integer64"
+        },
+        "totalOperatingExpenses": {
+          "type": "cds.Integer64"
+        },
+        "operatingIncome": {
+          "type": "cds.Integer64"
+        },
+        "totalOtherIncomeExpenseNet": {
+          "type": "cds.Integer64"
+        },
+        "ebit": {
+          "type": "cds.Integer64"
+        },
+        "interestExpense": {
+          "type": "cds.Integer64"
+        },
+        "incomeBeforeTax": {
+          "type": "cds.Integer64"
+        },
+        "incomeTaxExpense": {
+          "type": "cds.Integer64"
+        },
+        "minorityInterest": {
+          "type": "cds.Integer64"
+        },
+        "netIncomeFromContinuingOps": {
+          "type": "cds.Integer64"
+        },
+        "discontinuedOperations": {
+          "type": "cds.Integer64"
+        },
+        "extraordinaryItems": {
+          "type": "cds.Integer64"
+        },
+        "effectOfAccountingCharges": {
+          "type": "cds.Integer64"
+        },
+        "otherItems": {
+          "type": "cds.Integer64"
+        },
+        "netIncome": {
+          "type": "cds.Integer64"
+        },
+        "netIncomeApplicableToCommonShares": {
           "type": "cds.Integer64"
         }
       }
