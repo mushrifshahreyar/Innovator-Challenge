@@ -8,13 +8,14 @@ entity BusinessPartner {
                                      on balancesheet_qtr.Company_header = $self;
         cashflowstatements_qtr : Composition of many CashflowStatements_Qtr
                                      on cashflowstatements_qtr.Company_header = $self;
-        incomeStatements_Qtr   : Composition of many IncomeStatements_Qtr 
-                                     on incomeStatements_Qtr.Company_header = $self;
+        incomestatements_qtr   : Composition of many IncomeStatements_Qtr
+                                     on incomestatements_qtr.Company_header = $self;
+        financialratios_qtr    : Composition of many FinancialRatios_Qtr
+                                     on financialratios_qtr.Company_header = $self;
 }
 
 entity BalanceSheet_Qtr {
     key Company_header          : Association to BusinessPartner;
-    key ID                      : Integer;
     key endDate                 : Timestamp;
         maxAge                  : Integer64;
         cash                    : Integer64;
@@ -47,7 +48,6 @@ entity BalanceSheet_Qtr {
 
 entity CashflowStatements_Qtr {
     key Company_header                        : Association to BusinessPartner;
-    key ID                                    : Integer;
     key endDate                               : Timestamp;
         maxAge                                : Integer64;
         netIncome                             : Integer64;
@@ -71,7 +71,6 @@ entity CashflowStatements_Qtr {
 
 entity IncomeStatements_Qtr {
     key Company_header                    : Association to BusinessPartner;
-    key ID                                : Integer;
     key endDate                           : Timestamp;
         maxAge                            : Integer64;
         totalRevenue                      : Integer64;
@@ -96,4 +95,21 @@ entity IncomeStatements_Qtr {
         otherItems                        : Integer64;
         netIncome                         : Integer64;
         netIncomeApplicableToCommonShares : Integer64;
+}
+
+entity FinancialRatios_Qtr {
+    key Company_header : Association to BusinessPartner;
+    key endDate        : Timestamp;
+        zscore         : Decimal;
+        currentRatio   : Decimal;
+        quickRatio     : Decimal;
+        liquidityRatio : Decimal;
+        operatingRC    : Decimal;
+        liquidity      : Decimal;
+        ebitda         : Decimal;
+        freeCashFlow   : Decimal;
+        grossDebt      : Decimal;
+        netDebt        : Decimal;
+        roace          : Decimal;
+        returnOnSales  : Decimal;
 }

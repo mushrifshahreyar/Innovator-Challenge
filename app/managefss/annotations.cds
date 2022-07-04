@@ -96,15 +96,17 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     $Type  : 'UI.ReferenceFacet',
     Label  : 'Income Statements Quaterly',
     ID     : 'IncomeStatementsQuaterly1',
-    Target : 'incomeStatements_Qtr/@UI.LineItem#IncomeStatementsQuaterly',
+    Target : 'financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly',
 }
+
+
 ]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
     {
         $Type : 'UI.DataField',
-        Value : ID,
-        Label : 'ID',
+        Value : endDate,
+        Label : 'End Date',
     },
     {
         $Type : 'UI.DataField',
@@ -172,8 +174,8 @@ annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
 annotate service.CashflowStatements_Qtr with @(UI.LineItem #CashflowStatementsQuaterly : [
     {
         $Type : 'UI.DataField',
-        Value : ID,
-        Label : 'ID',
+        Value : endDate,
+        Label : 'End Date',
     },
     {
         $Type : 'UI.DataField',
@@ -265,8 +267,8 @@ annotate service.CashflowStatements_Qtr with @(UI.LineItem #CashflowStatementsQu
 annotate service.IncomeStatements_Qtr with @(UI.LineItem #IncomeStatementsQuaterly : [
     {
         $Type : 'UI.DataField',
-        Value : ID,
-        Label : 'ID',
+        Value : endDate,
+        Label : 'End Date',
     },
     {
         $Type : 'UI.DataField',
@@ -372,6 +374,69 @@ annotate service.IncomeStatements_Qtr with @(UI.LineItem #IncomeStatementsQuater
         $Type : 'UI.DataField',
         Value : netIncomeApplicableToCommonShares,
         Label : 'Issuance Of Stock',
+    },
+]);
+
+annotate service.FinancialRatios_Qtr with @(UI.LineItem #FinancialRatiosQuaterly : [
+    {
+        $Type : 'UI.DataField',
+        Value : endDate,
+        Label : 'End Date',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : zscore,
+        Label : 'Z-Score',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : currentRatio,
+        Label : 'Current Ratio',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : quickRatio,
+        Label : 'Quick Ratio',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : liquidityRatio,
+        Label : 'Operating WC vs Revenue',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : liquidity,
+        Label : 'Liquidity (in days sales)',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : ebitda,
+        Label : 'EBITDA vs Debt Service',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : freeCashFlow,
+        Label : 'Free Cash Flow vs Debt Service',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : grossDebt,
+        Label : 'Gross Debt to EBITDA',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netDebt,
+        Label : 'Net Debt (as a % of Revenue)',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : roace,
+        Label : 'ROACE',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : returnOnSales,
+        Label : 'Return on Sales',
     },
 ]);
 

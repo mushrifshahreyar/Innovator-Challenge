@@ -26,12 +26,8 @@ function readFile_incomestmt() {
 async function saveBalanceSheetQtr(BalanceSheetQtr) {
     BalanceSheetQtr = BalanceSheetQtr.balanceSheetHistoryQuarterly.balanceSheetStatements;
     
-    var ID = 100;
-    for(var data of BalanceSheetQtr) {
-        data['ID'] = ID;
-        data['COMPANY_HEADER_ID'] = 1;
-        ID += 1;
-    }
+    data['COMPANY_HEADER_ID'] = 1;
+    
     const db = await cds.connect.to("db");
     const {BalanceSheet_Qtr} = db.entities;
     db.run(DELETE.from(BalanceSheet_Qtr));
@@ -43,13 +39,7 @@ async function saveBalanceSheetQtr(BalanceSheetQtr) {
 
 async function saveIncomeStmtQtr(IncomeStmtQtr) {
     IncomeStmtQtr = IncomeStmtQtr.incomeStatementHistoryQuarterly.incomeStatementHistory;
-    
-    var ID = 100;
-    for(var data of IncomeStmtQtr) {
-        data['ID'] = ID;
-        data['COMPANY_HEADER_ID'] = 1;
-        ID += 1;
-    }
+    data['COMPANY_HEADER_ID'] = 1;
     const db = await cds.connect.to("db");
     const {IncomeStatements_Qtr} = db.entities;
     db.run(DELETE.from(IncomeStatements_Qtr));
@@ -62,12 +52,8 @@ async function saveIncomeStmtQtr(IncomeStmtQtr) {
 async function saveCashflowQtr(cashflowQtr) {
     cashflowQtr = cashflowQtr.cashflowStatementHistoryQuarterly.cashflowStatements;
     
-    var ID = 100;
-    for(var data of cashflowQtr) {
-        data['ID'] = ID;
-        data['COMPANY_HEADER_ID'] = 1;
-        ID += 1;
-    }
+    data['COMPANY_HEADER_ID'] = 1;
+    
     const db = await cds.connect.to("db");
     const {CashflowStatements_Qtr} = db.entities;
     db.run(DELETE.from(CashflowStatements_Qtr));

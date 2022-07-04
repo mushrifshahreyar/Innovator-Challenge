@@ -56,7 +56,7 @@
             }
           ]
         },
-        "incomeStatements_Qtr": {
+        "incomestatements_qtr": {
           "type": "cds.Composition",
           "cardinality": {
             "max": "*"
@@ -65,7 +65,28 @@
           "on": [
             {
               "ref": [
-                "incomeStatements_Qtr",
+                "incomestatements_qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        },
+        "financialratios_qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "app.businesspartner.FinancialRatios_Qtr",
+          "on": [
+            {
+              "ref": [
+                "financialratios_qtr",
                 "Company_header"
               ]
             },
@@ -93,10 +114,6 @@
               ]
             }
           ]
-        },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
         },
         "endDate": {
           "key": true,
@@ -200,10 +217,6 @@
             }
           ]
         },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
-        },
         "endDate": {
           "key": true,
           "type": "cds.Timestamp"
@@ -279,10 +292,6 @@
             }
           ]
         },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
-        },
         "endDate": {
           "key": true,
           "type": "cds.Timestamp"
@@ -355,6 +364,63 @@
         },
         "netIncomeApplicableToCommonShares": {
           "type": "cds.Integer64"
+        }
+      }
+    },
+    "app.businesspartner.FinancialRatios_Qtr": {
+      "kind": "entity",
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "app.businesspartner.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "zscore": {
+          "type": "cds.Decimal"
+        },
+        "currentRatio": {
+          "type": "cds.Decimal"
+        },
+        "quickRatio": {
+          "type": "cds.Decimal"
+        },
+        "liquidityRatio": {
+          "type": "cds.Decimal"
+        },
+        "operatingRC": {
+          "type": "cds.Decimal"
+        },
+        "liquidity": {
+          "type": "cds.Decimal"
+        },
+        "ebitda": {
+          "type": "cds.Decimal"
+        },
+        "freeCashFlow": {
+          "type": "cds.Decimal"
+        },
+        "grossDebt": {
+          "type": "cds.Decimal"
+        },
+        "netDebt": {
+          "type": "cds.Decimal"
+        },
+        "roace": {
+          "type": "cds.Decimal"
+        },
+        "returnOnSales": {
+          "type": "cds.Decimal"
         }
       }
     },
@@ -470,7 +536,7 @@
           "$Type": "UI.ReferenceFacet",
           "Label": "Income Statements Quaterly",
           "ID": "IncomeStatementsQuaterly1",
-          "Target": ""
+          "Target": "financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly"
         }
       ],
       "projection": {
@@ -535,7 +601,7 @@
             }
           ]
         },
-        "incomeStatements_Qtr": {
+        "incomestatements_qtr": {
           "type": "cds.Composition",
           "cardinality": {
             "max": "*"
@@ -544,7 +610,28 @@
           "on": [
             {
               "ref": [
-                "incomeStatements_Qtr",
+                "incomestatements_qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        },
+        "financialratios_qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "BusinessPartnerService.FinancialRatios_Qtr",
+          "on": [
+            {
+              "ref": [
+                "financialratios_qtr",
                 "Company_header"
               ]
             },
@@ -564,9 +651,9 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "ID"
+            "=": "endDate"
           },
-          "Label": "ID"
+          "Label": "End Date"
         },
         {
           "$Type": "UI.DataField",
@@ -673,10 +760,6 @@
             }
           ]
         },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
-        },
         "endDate": {
           "key": true,
           "type": "cds.Timestamp"
@@ -770,9 +853,9 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "ID"
+            "=": "endDate"
           },
-          "Label": "ID"
+          "Label": "End Date"
         },
         {
           "$Type": "UI.DataField",
@@ -914,10 +997,6 @@
             }
           ]
         },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
-        },
         "endDate": {
           "key": true,
           "type": "cds.Timestamp"
@@ -984,9 +1063,9 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "ID"
+            "=": "endDate"
           },
-          "Label": "ID"
+          "Label": "End Date"
         },
         {
           "$Type": "UI.DataField",
@@ -1156,10 +1235,6 @@
             }
           ]
         },
-        "ID": {
-          "key": true,
-          "type": "cds.Integer"
-        },
         "endDate": {
           "key": true,
           "type": "cds.Timestamp"
@@ -1232,6 +1307,156 @@
         },
         "netIncomeApplicableToCommonShares": {
           "type": "cds.Integer64"
+        }
+      }
+    },
+    "BusinessPartnerService.FinancialRatios_Qtr": {
+      "kind": "entity",
+      "@UI.LineItem#FinancialRatiosQuaterly": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "endDate"
+          },
+          "Label": "End Date"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "zscore"
+          },
+          "Label": "Z-Score"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "currentRatio"
+          },
+          "Label": "Current Ratio"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "quickRatio"
+          },
+          "Label": "Quick Ratio"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "liquidityRatio"
+          },
+          "Label": "Operating WC vs Revenue"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "liquidity"
+          },
+          "Label": "Liquidity (in days sales)"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "ebitda"
+          },
+          "Label": "EBITDA vs Debt Service"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "freeCashFlow"
+          },
+          "Label": "Free Cash Flow vs Debt Service"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "grossDebt"
+          },
+          "Label": "Gross Debt to EBITDA"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netDebt"
+          },
+          "Label": "Net Debt (as a % of Revenue)"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "roace"
+          },
+          "Label": "ROACE"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "returnNnSales"
+          },
+          "Label": "Return on Sales"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "app.businesspartner.FinancialRatios_Qtr"
+          ]
+        }
+      },
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "BusinessPartnerService.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "zscore": {
+          "type": "cds.Decimal"
+        },
+        "currentRatio": {
+          "type": "cds.Decimal"
+        },
+        "quickRatio": {
+          "type": "cds.Decimal"
+        },
+        "liquidityRatio": {
+          "type": "cds.Decimal"
+        },
+        "operatingRC": {
+          "type": "cds.Decimal"
+        },
+        "liquidity": {
+          "type": "cds.Decimal"
+        },
+        "ebitda": {
+          "type": "cds.Decimal"
+        },
+        "freeCashFlow": {
+          "type": "cds.Decimal"
+        },
+        "grossDebt": {
+          "type": "cds.Decimal"
+        },
+        "netDebt": {
+          "type": "cds.Decimal"
+        },
+        "roace": {
+          "type": "cds.Decimal"
+        },
+        "returnOnSales": {
+          "type": "cds.Decimal"
         }
       }
     },
