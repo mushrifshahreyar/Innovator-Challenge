@@ -96,8 +96,8 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     $Type  : 'UI.ReferenceFacet',
     Label  : 'Income Statements Quaterly',
     ID     : 'IncomeStatementsQuaterly1',
-    Target : 'incomestatements_qtr/@UI.LineItem#IncomeStatementsQuaterly',
-},
+    Target : 'incomeStatements_Qtr/@UI.LineItem#IncomeStatementsQuaterly',
+}
 ]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [

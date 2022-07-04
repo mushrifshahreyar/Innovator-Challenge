@@ -55,6 +55,27 @@
               ]
             }
           ]
+        },
+        "incomeStatements_Qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "app.businesspartner.IncomeStatements_Qtr",
+          "on": [
+            {
+              "ref": [
+                "incomeStatements_Qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       }
     },
@@ -444,6 +465,12 @@
           "Label": "CashFlow Statements Quaterly",
           "ID": "CashflowStatementsQuaterly1",
           "Target": "cashflowstatements_qtr/@UI.LineItem#CashflowStatementsQuaterly"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "Income Statements Quaterly",
+          "ID": "IncomeStatementsQuaterly1",
+          "Target": ""
         }
       ],
       "projection": {
@@ -497,6 +524,27 @@
             {
               "ref": [
                 "cashflowstatements_qtr",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        },
+        "incomeStatements_Qtr": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "BusinessPartnerService.IncomeStatements_Qtr",
+          "on": [
+            {
+              "ref": [
+                "incomeStatements_Qtr",
                 "Company_header"
               ]
             },
@@ -932,7 +980,7 @@
     },
     "BusinessPartnerService.IncomeStatements_Qtr": {
       "kind": "entity",
-      "@UI.LineItem#IncomeStmtQuaterly": [
+      "@UI.LineItem#IncomeStatementsQuaterly": [
         {
           "$Type": "UI.DataField",
           "Value": {

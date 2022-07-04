@@ -8,6 +8,8 @@ entity BusinessPartner {
                                      on balancesheet_qtr.Company_header = $self;
         cashflowstatements_qtr : Composition of many CashflowStatements_Qtr
                                      on cashflowstatements_qtr.Company_header = $self;
+        incomeStatements_Qtr   : Composition of many IncomeStatements_Qtr 
+                                     on incomeStatements_Qtr.Company_header = $self;
 }
 
 entity BalanceSheet_Qtr {

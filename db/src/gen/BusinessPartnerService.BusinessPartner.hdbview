@@ -6,5 +6,6 @@ VIEW BusinessPartnerService_BusinessPartner AS SELECT
 FROM app_businesspartner_BusinessPartner AS BusinessPartner_0
 WITH ASSOCIATIONS (
   MANY TO MANY JOIN BusinessPartnerService_BalanceSheet_Qtr AS balancesheet_qtr ON (balancesheet_qtr.Company_header_ID = ID),
-  MANY TO MANY JOIN BusinessPartnerService_CashflowStatements_Qtr AS cashflowstatements_qtr ON (cashflowstatements_qtr.Company_header_ID = ID)
+  MANY TO MANY JOIN BusinessPartnerService_CashflowStatements_Qtr AS cashflowstatements_qtr ON (cashflowstatements_qtr.Company_header_ID = ID),
+  MANY TO MANY JOIN BusinessPartnerService_IncomeStatements_Qtr AS incomeStatements_Qtr ON (incomeStatements_Qtr.Company_header_ID = ID)
 )
