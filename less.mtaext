@@ -1,0 +1,23 @@
+_schema-version: "3.1"
+ID: InnovatorChallenge-small
+extends: InnovatorChallenge
+modules:
+ - name: InnovatorChallenge-srv
+   build-parameters:
+     ignore: ["node_modules/"]
+
+ - name: InnovatorChallenge-db-deployer
+   build-parameters:
+     ignore: ["node_modules/"]
+
+ - name: InnovatorChallenge_ui_deployer
+   build-parameters:
+     ignore: ["node_modules/"]
+
+ - name: app
+   build-parameters:
+     ignore: ["node_modules/"]
+
+ - name: managefss
+   build-parameters:
+     ignore: ["node_modules/"]    

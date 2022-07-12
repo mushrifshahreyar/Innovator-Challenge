@@ -1,3 +1,10 @@
 
 # auto generated wildcard
 db/.env
+node_modules
+app/node_modules
+app/managefss/node_modules
+db/node_modules
+gen/node_modules
+gen/srv/node_modules
+
