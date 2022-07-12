@@ -71,12 +71,21 @@ annotate service.BusinessPartner with @(
         Target : '@UI.FieldGroup#GeneratedGroup1'
     }],
 
-    UI.Identification              : [{
-        $Type             : 'UI.DataFieldForAction',
-        Label             : 'Import Financial Data',
-        Action            : 'BusinessPartnerService.EntityContainer/UpdateBalanceSheet',
-        ![@UI.Importance] : #High
-    }]
+    UI.Identification              : [
+        {
+            $Type             : 'UI.DataFieldForAction',
+            Label             : 'Import Financial Data',
+            Action            : 'BusinessPartnerService.EntityContainer/UpdateBalanceSheet',
+            ![@UI.Importance] : #High
+        },
+    
+        {
+            $Type             : 'UI.DataFieldForAction',
+            Label             : 'Calculate Financial Ratio',
+            Action            : 'BusinessPartnerService.CalcFinancialRatios',
+            ![@UI.Importance] : #High
+        }
+    ]
 
 );
 
@@ -96,6 +105,12 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     $Type  : 'UI.ReferenceFacet',
     Label  : 'Income Statements Quaterly',
     ID     : 'IncomeStatementsQuaterly1',
+    Target : 'incomestatements_qtr/@UI.LineItem#IncomeStatementsQuaterly',
+},
+{
+    $Type  : 'UI.ReferenceFacet',
+    Label  : 'Financial Ratios Quaterly',
+    ID     : 'FinancialRatiosQuaterly1',
     Target : 'financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly',
 }
 
@@ -400,38 +415,8 @@ annotate service.FinancialRatios_Qtr with @(UI.LineItem #FinancialRatiosQuaterly
     },
     {
         $Type : 'UI.DataField',
-        Value : liquidityRatio,
-        Label : 'Operating WC vs Revenue',
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : liquidity,
-        Label : 'Liquidity (in days sales)',
-    },
-    {
-        $Type : 'UI.DataField',
         Value : ebitda,
         Label : 'EBITDA vs Debt Service',
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : freeCashFlow,
-        Label : 'Free Cash Flow vs Debt Service',
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : grossDebt,
-        Label : 'Gross Debt to EBITDA',
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : netDebt,
-        Label : 'Net Debt (as a % of Revenue)',
-    },
-    {
-        $Type : 'UI.DataField',
-        Value : roace,
-        Label : 'ROACE',
     },
     {
         $Type : 'UI.DataField',
