@@ -97,19 +97,19 @@ entity IncomeStatements_Qtr {
         netIncomeApplicableToCommonShares : Integer64;
 }
 
+@Aggregation.ApplySupported : {
+    $Type : 'Aggregation.ApplySupportedType',
+    GroupableProperties : [zscore],
+    AggregatableProperties: [{
+        Property: zscore
+    }]
+}
 entity FinancialRatios_Qtr {
     key Company_header : Association to BusinessPartner;
     key endDate        : Timestamp;
         zscore         : Decimal;
         currentRatio   : Decimal;
         quickRatio     : Decimal;
-        liquidityRatio : Decimal;
-        operatingRC    : Decimal;
-        liquidity      : Decimal;
         ebitda         : Decimal;
-        freeCashFlow   : Decimal;
-        grossDebt      : Decimal;
-        netDebt        : Decimal;
-        roace          : Decimal;
         returnOnSales  : Decimal;
 }

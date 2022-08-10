@@ -24,11 +24,13 @@ modules:
   - name: InnovatorChallenge-db
   parameters:
     buildpack: nodejs_buildpack
+  build-parameters:
+    ignore: ["default-env.json",".env"]
 - name: app
   type: approuter.nodejs
   path: app
   requires:
-  - name: InnovatorChallenge_html_repo_runtime
+  # - name: InnovatorChallenge_html_repo_runtime
   - name: uaa_InnovatorChallenge
   - name: srv-api
     group: destinations
@@ -39,23 +41,23 @@ modules:
   parameters:
     disk-quota: 256M
     memory: 256M
-- name: InnovatorChallenge_ui_deployer
-  type: com.sap.application.content
-  path: .
-  requires:
-  - name: InnovatorChallenge_html_repo_host
-    parameters:
-      content-target: true
-- name: managefss
-  type: html5
-  path: app/managefss
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
+# - name: InnovatorChallenge_ui_deployer
+#   type: com.sap.application.content
+#   path: .
+#   requires:
+#   - name: InnovatorChallenge_html_repo_host
+#     parameters:
+#       content-target: true
+# - name: managefss
+#   type: html5
+#   path: app/managefss
+#   build-parameters:
+#     build-result: dist
+#     builder: custom
+#     commands:
+#     - npm install
+#     - npm run build:cf
+#     supported-platforms: []
 resources:
 - name: InnovatorChallenge-db
   type: com.sap.xs.hdi-container
@@ -64,11 +66,11 @@ resources:
     service-plan: hdi-shared
   properties:
     hdi-service-name: ${service-name}
-- name: InnovatorChallenge_html_repo_runtime
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: html5-apps-repo
-    service-plan: app-runtime
+# - name: InnovatorChallenge_html_repo_runtime
+#   type: org.cloudfoundry.managed-service
+#   parameters:
+#     service: html5-apps-repo
+#     service-plan: app-runtime
 - name: uaa_InnovatorChallenge
   type: org.cloudfoundry.managed-service
   parameters:
@@ -76,14 +78,14 @@ resources:
     service: xsuaa
     service-name: InnovatorChallenge-xsuaa-service
     service-plan: application
-- name: InnovatorChallenge_html_repo_host
-  type: org.cloudfoundry.managed-service
-  parameters:
-    service: html5-apps-repo
-    service-plan: app-host
-parameters:
-  deploy_mode: html5-repo
-  enable-parallel-deployments: true
+# - name: InnovatorChallenge_html_repo_host
+#   type: org.cloudfoundry.managed-service
+#   parameters:
+#     service: html5-apps-repo
+#     service-plan: app-host
+# parameters:
+#   deploy_mode: html5-repo
+#   enable-parallel-deployments: true
 build-parameters:
   before-all:
   - builder: custom

@@ -86,7 +86,6 @@ annotate service.BusinessPartner with @(
             ![@UI.Importance] : #High
         }
     ]
-
 );
 
 annotate service.BusinessPartner with @(UI.Facets : [{
@@ -112,9 +111,13 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     Label  : 'Financial Ratios Quaterly',
     ID     : 'FinancialRatiosQuaterly1',
     Target : 'financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly',
-}
-
-
+},
+// {
+//     $Type  : 'UI.ReferenceFacet',
+//     Label  : 'Financial Ratios Quaterly',
+//     ID     : 'FinancialRatiosQuaterly1',
+//     Target : 'financialratios_qtr/@UI.Chart#FinancialRatiosQuaterly'
+// }
 ]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
@@ -424,6 +427,20 @@ annotate service.FinancialRatios_Qtr with @(UI.LineItem #FinancialRatiosQuaterly
         Label : 'Return on Sales',
     },
 ]);
+
+// annotate service.FinancialRatios_Qtr with @(
+//     UI.Chart #FinancialRatiosQuaterly: {
+//         Title : 'Test Chart',
+//         ChartType : #Column,
+//         Dimensions : [
+//             endDate
+//         ],
+//         Measures : [
+//             zscore
+//         ]
+//     }
+// ) ;
+
 
 annotate service.BusinessPartner with {
     company_title @Common.Label : 'Company Title'

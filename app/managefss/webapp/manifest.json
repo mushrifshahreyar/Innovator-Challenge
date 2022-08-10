@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/business-partner/",
+                "uri": "business-partner/",
                 "type": "OData",
                 "settings": {
                     "annotations": [
@@ -133,12 +133,26 @@
                         "settings": {
                             "editableHeaderContent": false,
                             "entitySet": "BusinessPartner",
-                            "navigation": {}
+                            "navigation": {},
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "NewTest": {
+                                            "template": "managefss.ext.fragment.NewTest",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "FinancialRatiosQuaterly1"
+                                            },
+                                            "title": "Test",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            },
-            "config": {}
+            }
         }
     },
     "sap.fiori": {

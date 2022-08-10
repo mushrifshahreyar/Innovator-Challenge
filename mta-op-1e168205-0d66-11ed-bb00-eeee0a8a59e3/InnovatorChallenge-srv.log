@@ -1,0 +1,344 @@
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:39:52 UTC 2022] Updated app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb ({"lifecycle"=>{"data"=>{"buildpacks"=>["nodejs_buildpack"]}, "type"=>"buildpack"}}) (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:39:52 UTC 2022] Updating process: "web" (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:39:59 UTC 2022] Uploading app package for app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:39:59 UTC 2022] Updated app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb ({"environment_variables"=>"[PRIVATE DATA HIDDEN]"}) (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Stopping app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Cell 42e55e20-2bb5-4796-9458-1f9408d233c4 stopping instance 6a08df02-fb9f-4dc7-5f5d-0d48 (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Creating build for app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Downloading nodejs_buildpack... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Cell c3730d2e-b10e-4360-a969-34d6e945d815 creating container for instance dc9dfcac-df38-49f6-a374-15ac3367f5a1 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:12 UTC 2022] Downloaded nodejs_buildpack (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:13 UTC 2022] Cell c3730d2e-b10e-4360-a969-34d6e945d815 successfully created container for instance dc9dfcac-df38-49f6-a374-15ac3367f5a1 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:13 UTC 2022] Downloading build artifacts cache... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:13 UTC 2022] Downloading app package... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:13 UTC 2022] Downloaded build artifacts cache (226B) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] Downloaded app package (8.6M) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] -----> Nodejs Buildpack version 1.7.70 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] Copy [/tmp/buildpacks/96e4109cb1f7b490cbd774d9987308f8/dependencies/77cb0120d6c38426ca6a9a8098df68c7/node_16.15.0_linux_x64_cflinuxfs3_cae3a27b.tgz] (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] -----> Installing node 16.15.0 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] [31;1m**WARNING**[0m Dangerous semver range (>) in engines.node. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] engines.npm (package.json): unspecified (use default) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] engines.node (package.json): >=12.18 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:14 UTC 2022] -----> Installing binaries (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] Copy [/tmp/buildpacks/96e4109cb1f7b490cbd774d9987308f8/dependencies/584e43947dbdc85a5abee0933bc2af4f/yarn_1.22.18_linux_noarch_any-stack_4fc4a734.tgz] (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] -----> Installing yarn 1.22.18 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] Using default npm version: 8.5.5 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] -----> Creating runtime environment (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] Installed yarn 1.22.18 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] Rebuilding any native modules (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] Prebuild detected (node_modules already exists) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] -----> Building dependencies (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NPM_CONFIG_PRODUCTION=true (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.236#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NPM_CONFIG_LOGLEVEL=error (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NODE_VERBOSE=false (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NODE_MODULES_CACHE=true (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NODE_HOME=/tmp/contents400480810/deps/0/node (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:16 UTC 2022] NODE_ENV=production (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:19 UTC 2022] service is not configured to run with Sealights (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:19 UTC 2022] inside Sealights hook (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:22.237#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8197###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:19 UTC 2022] Contrast Security no credentials found. Will not write environment files. (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:19 UTC 2022] service is not configured to run with Sealights (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:19 UTC 2022] inside Sealights hook (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Uploading droplet... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Uploading build artifacts cache... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Uploading droplet, build artifacts cache... (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Exit status 0 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Uploaded build artifacts cache (227B) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:26 UTC 2022] Creating droplet for app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Uploaded droplet (39.8M) (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Uploading complete (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Cell 42e55e20-2bb5-4796-9458-1f9408d233c4 destroying container for instance 6a08df02-fb9f-4dc7-5f5d-0d48 (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Cell c3730d2e-b10e-4360-a969-34d6e945d815 destroying container for instance dc9dfcac-df38-49f6-a374-15ac3367f5a1 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Cell c3730d2e-b10e-4360-a969-34d6e945d815 stopping instance dc9dfcac-df38-49f6-a374-15ac3367f5a1 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:28 UTC 2022] Exit status 137 (STDOUT, PROXY)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:29 UTC 2022] Cell 42e55e20-2bb5-4796-9458-1f9408d233c4 successfully destroyed container for instance 6a08df02-fb9f-4dc7-5f5d-0d48 (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:32.221#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.stageAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8199###
+[PollStageAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:29 UTC 2022] Cell c3730d2e-b10e-4360-a969-34d6e945d815 successfully destroyed container for instance dc9dfcac-df38-49f6-a374-15ac3367f5a1 (STDOUT, STG)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:32 UTC 2022] Updated app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb ({:droplet_guid=>"1076e44e-7168-4c2d-8e7b-be13a0149ecc"}) (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:32 UTC 2022] Creating revision for app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:32 UTC 2022] Starting app with guid 0d815711-efaa-43ec-90c8-a04c8a8f9bdb (STDOUT, API)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:32 UTC 2022] Cell 42e55e20-2bb5-4796-9458-1f9408d233c4 creating container for instance 41bd59f3-c62b-458a-62e4-9928 (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:33 UTC 2022] Cell 42e55e20-2bb5-4796-9458-1f9408d233c4 successfully created container for instance 41bd59f3-c62b-458a-62e4-9928 (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:33 UTC 2022] Downloading droplet... (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:35 UTC 2022] Starting health monitoring of container (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:35 UTC 2022] Downloaded droplet (39.8M) (STDOUT, CELL)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] > cds run (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] > InnovatorChallenge@1.0.0 start (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] [0m (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] ./srv/csn.json (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] [2m (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:36 UTC 2022] [cds] - model loaded from 1 file(s): (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] } (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] certificate: '...' (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.409#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] password: '...', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] user: '3026E03439A5422589365394BCFA9240_13VTH6FQMJ1I6Y02QFBPFA070_RT', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] hdi_password: '...', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] hdi_user: '3026E03439A5422589365394BCFA9240_13VTH6FQMJ1I6Y02QFBPFA070_DT', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] schema: '3026E03439A5422589365394BCFA9240', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] url: 'jdbc:sap://1be4e125-6333-4869-9af8-f7bb85aa4f1e.hana.prod-eu10.hanacloud.ondemand.com:443?encrypt=true&validateCertificate=true&currentschema=3026E03439A5422589365394BCFA9240', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] driver: 'com.sap.db.jdbc.Driver', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] port: '443', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] host: '1be4e125-6333-4869-9af8-f7bb85aa4f1e.hana.prod-eu10.hanacloud.ondemand.com', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] database_id: '1be4e125-6333-4869-9af8-f7bb85aa4f1e', (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] [cds] - connect to db > hana { (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] [cds] - serving BusinessPartnerService { at: '/business-partner', impl: './srv/businesspartner.js' } (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] [cds] - server listening on { url: 'http://localhost:8080' } (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:37 UTC 2022] [cds] - launched at 7/27/2022, 4:40:36 AM, in: 821.307ms (STDOUT, APP/PROC/WEB)#
+
+#2.0#2022 07 27 04:40:42.410#Z#DEBUG#com.sap.cloud.lm.sl.xs2.1e168205-0d66-11ed-bb00-eeee0a8a59e3.InnovatorChallenge-srv.startAppTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-8202###
+[PollStartAppStatusExecution] [InnovatorChallenge-srv] 0d815711-efaa-43ec-90c8-a04c8a8f9bdb [Wed Jul 27 04:40:38 UTC 2022] Container became healthy (STDOUT, CELL)#
+

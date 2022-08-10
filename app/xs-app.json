@@ -1,11 +1,20 @@
 {
-  "authenticationMethod": "none",
+  "welcomeFile": "/app/managefss/webapp/index.html",
+  "authenticationMethod": "route",
   "routes": [
     {
-      "source": "/business-partner/(.*)",
+        "source": "^/app/(.*)$",
+        "target": "$1",
+        "authenticationType": "none",
+        "localDir": "."
+    },
+    {
+      "source": "^/(.*)$",
+      "target":"$1",
       "destination": "srv-api",
+      "authenticationType": "none",
       "csrfProtection": true
     }
-  ],
-  "welcomeFile": "/managefss"
+  ]
+  
 }
