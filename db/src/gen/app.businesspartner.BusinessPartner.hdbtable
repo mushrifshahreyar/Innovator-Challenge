@@ -8,5 +8,6 @@ COLUMN TABLE app_businesspartner_BusinessPartner (
   MANY TO MANY JOIN app_businesspartner_BalanceSheet_Qtr AS balancesheet_qtr ON (balancesheet_qtr.Company_header_ID = ID),
   MANY TO MANY JOIN app_businesspartner_CashflowStatements_Qtr AS cashflowstatements_qtr ON (cashflowstatements_qtr.Company_header_ID = ID),
   MANY TO MANY JOIN app_businesspartner_IncomeStatements_Qtr AS incomestatements_qtr ON (incomestatements_qtr.Company_header_ID = ID),
-  MANY TO MANY JOIN app_businesspartner_FinancialRatios_Qtr AS financialratios_qtr ON (financialratios_qtr.Company_header_ID = ID)
+  MANY TO MANY JOIN app_businesspartner_FinancialRatios_Qtr AS financialratios_qtr ON (financialratios_qtr.Company_header_ID = ID),
+  MANY TO MANY JOIN app_businesspartner_IncomeStmnt_Predicted AS IncomeStmnt_Predicted ON (IncomeStmnt_Predicted.Company_header_ID = ID)
 )

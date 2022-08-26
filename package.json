@@ -1,71 +1,76 @@
 {
-    "name": "InnovatorChallenge",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^5",
-        "express": "^4",
-        "hdb": "^0.18.3",
-        "passport": "^0.6.0"
+  "name": "InnovatorChallenge",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^5",
+    "express": "^4",
+    "hdb": "^0.18.3",
+    "passport": "^0.6.0"
+  },
+  "scripts": {
+    "start": "cds run",
+    "watch-managefss": "cds watch --open managefss/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy InnovatorChallenge --delete-services --delete-service-keys",
+    "watch-prediction_rule": "cds watch --open prediction_rule/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-overview": "cds watch --open overview/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
     },
-    "scripts": {
-        "start": "cds run",
-        "watch-managefss": "cds watch --open managefss/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy InnovatorChallenge --delete-services --delete-service-keys"
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
     },
-    "eslintConfig": {
-        "extends": "eslint:recommended",
-        "env": {
-            "es2020": true,
-            "node": true,
-            "jest": true,
-            "mocha": true
-        },
-        "globals": {
-            "SELECT": true,
-            "INSERT": true,
-            "UPDATE": true,
-            "DELETE": true,
-            "CREATE": true,
-            "DROP": true,
-            "CDL": true,
-            "CQL": true,
-            "CXL": true,
-            "cds": true
-        },
-        "rules": {
-            "no-console": "off",
-            "require-atomic-updates": "off"
-        }
-    },
-    "cds": {
-        "build": {
-            "tasks": [
-                {
-                    "for": "hana",
-                    "dest": "../db"
-                },
-                {
-                    "for": "node-cf"
-                }
-            ]
-        },
-        "hana": {
-            "deploy-format": "hdbtable"
-        },
-        "requires": {
-            "db": {
-                "kind": "hana"
-            }
-        }
-    },
-    "sapux": [
-        "app/managefss"
-    ],
-    "devDependencies": {
-        "@sap/ux-specification": "^1.100.3"
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
     }
+  },
+  "cds": {
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
+        },
+        {
+          "for": "node-cf"
+        }
+      ]
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
+  },
+  "sapux": [
+    "app/managefss",
+    "app/prediction_rule",
+    "app/prediction_rule",
+    "app/overview"
+  ],
+  "devDependencies": {
+    "@sap/ux-specification": "^1.102.4"
+  }
 }

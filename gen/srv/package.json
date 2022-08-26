@@ -14,7 +14,8 @@
   "scripts": {
     "start": "cds run",
     "watch-managefss": "cds watch --open managefss/webapp/index.html?sap-ui-xx-viewCache=false",
-    "undeploy": "cf undeploy InnovatorChallenge --delete-services --delete-service-keys"
+    "undeploy": "cf undeploy InnovatorChallenge --delete-services --delete-service-keys",
+    "watch-prediction_rule": "cds watch --open prediction_rule/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -63,10 +64,11 @@
     }
   },
   "sapux": [
-    "app/managefss"
+    "app/managefss",
+    "app/prediction_rule"
   ],
   "devDependencies": {
-    "@sap/ux-specification": "^1.100.3"
+    "@sap/ux-specification": "^1.102.4"
   },
   "engines": {
     "node": ">=12.18"

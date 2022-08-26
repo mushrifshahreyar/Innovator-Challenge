@@ -12,6 +12,8 @@ entity BusinessPartner {
                                      on incomestatements_qtr.Company_header = $self;
         financialratios_qtr    : Composition of many FinancialRatios_Qtr
                                      on financialratios_qtr.Company_header = $self;
+        IncomeStmnt_Predicted  : Composition of many IncomeStmnt_Predicted
+                                     on IncomeStmnt_Predicted.Company_header = $self;
 }
 
 entity BalanceSheet_Qtr {
@@ -112,4 +114,30 @@ entity FinancialRatios_Qtr {
         quickRatio     : Decimal;
         ebitda         : Decimal;
         returnOnSales  : Decimal;
+}
+
+entity IncomeStmnt_Predicted {
+    key Company_header                  : Association to BusinessPartner;
+    key endDate                         : Timestamp;
+    key P_Case                            : String;
+        totalRevenue                    : Decimal;
+        costOfGoodSold                  : Decimal;
+        SG_A_Expense                    : Decimal;
+        R_D_Expense                     : Decimal;
+        otherOperatingIncomeExpense     : Decimal;
+        operatingProfit                 : Decimal;
+        interestincome                  : Decimal;
+        interestExpense                 : Decimal;
+        OtherIncomeExpense              : Decimal;
+        incomeTax                       : Decimal;
+        netIncomeAfterTax               : Decimal;
+}
+
+entity Prediction_Rule {
+    key P_Case              : String(20);
+        GDP_Growth          : Integer64;
+        Sales_Growth        : Integer64;
+        COGS_Margin         : Integer64;
+        Cost_Inflation      : Integer64;
+        Taxes               : Integer64;
 }

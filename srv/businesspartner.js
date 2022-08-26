@@ -88,8 +88,10 @@ module.exports = function () {
     this.on('CalcFinancialRatios',  async (req) => {
         const db = await cds.connect.to("db");
         const {BusinessPartner} = db.entities;
+        const {Prediction_Rule} = db.entities;
         var bp = await SELECT.one.from(BusinessPartner).where({ID : req.params[0]})
-        
+        var prediction_Rule = await SELECT.from(Prediction_Rule);
+
         console.log("Calculating Financial Ratios");
         let balanceSheetQtr = readFile();
         balanceSheetQtr = balanceSheetQtr.balanceSheetHistoryQuarterly.balanceSheetStatements;
@@ -99,7 +101,7 @@ module.exports = function () {
         incomestmtQtr = incomestmtQtr.incomeStatementHistoryQuarterly.incomeStatementHistory;
                 
         // Creating Business Partnet Object       
-        var businessPartner = new business_partner(bp.ID, bp.company_code, bp.company_title, balanceSheetQtr, cashflowQtr, incomestmtQtr);
+        var businessPartner = new business_partner(bp.ID, bp.company_code, bp.company_title, balanceSheetQtr, cashflowQtr, incomestmtQtr, prediction_Rule);
         var financial_ratio = businessPartner.getFinancialRatios();
 
         const {FinancialRatios_Qtr} = db.entities;
@@ -107,5 +109,39 @@ module.exports = function () {
         db.tx().commit();
         db.run(INSERT.into(FinancialRatios_Qtr, financial_ratio));
         db.tx().commit();
+        
+    });
+
+    this.on('PredictIncome', async   (req) => { 
+        const db = await cds.connect.to("db");
+        const {BusinessPartner} = db.entities;
+        const {Prediction_Rule} = db.entities;
+        var bp = await SELECT.one.from(BusinessPartner).where({ID : req.params[0]});
+        var prediction_Rule = await SELECT.from(Prediction_Rule);
+
+        console.log("Predicting Income Statement");
+        // console.log(prediction_Rule);
+        let balanceSheetQtr = readFile();
+        balanceSheetQtr = balanceSheetQtr.balanceSheetHistoryQuarterly.balanceSheetStatements;
+        let cashflowQtr = readFile_cashflow();
+        cashflowQtr = cashflowQtr.cashflowStatementHistoryQuarterly.cashflowStatements;
+        let incomestmtQtr = readFile_incomestmt();
+        incomestmtQtr = incomestmtQtr.incomeStatementHistoryQuarterly.incomeStatementHistory;
+        incomestmtQtr.sort(function(a,b){
+            return new Date(b.date) - new Date(a.date);
+          });
+        // Creating Business Partnet Object       
+        var businessPartner = new business_partner(bp.ID, bp.company_code, bp.company_title, balanceSheetQtr, cashflowQtr, incomestmtQtr, prediction_Rule);
+        var income_STMNT_Predicted = businessPartner.getPredicted_Income_Statements();
+        console.log("--------------------------------------------------");
+        income_STMNT_Predicted = [...new Set(income_STMNT_Predicted)];
+        console.log(income_STMNT_Predicted[1]);
+        const {IncomeStmnt_Predicted} = db.entities; 
+        db.run(DELETE.from(IncomeStmnt_Predicted));
+        db.tx().commit();
+        db.run(INSERT.into(IncomeStmnt_Predicted,income_STMNT_Predicted));
+        // db.run(INSERT.into(IncomeStmnt_Predicted).columns('COMPANY_HEADER_ID', 'endDate','P_Case').rows(['1','2021-12-31T00:00:00.000Z','Base']));
+        db.tx().commit();
+        console.log("----------------P R E D I C T I O N----------------------------");
     });
 }

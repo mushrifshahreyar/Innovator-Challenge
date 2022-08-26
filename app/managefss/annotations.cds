@@ -84,6 +84,13 @@ annotate service.BusinessPartner with @(
             Label             : 'Calculate Financial Ratio',
             Action            : 'BusinessPartnerService.CalcFinancialRatios',
             ![@UI.Importance] : #High
+        },
+
+        {
+            $Type             : 'UI.DataFieldForAction',
+            Label             : 'Predict Income Statement',
+            Action            : 'BusinessPartnerService.PredictIncome',
+            ![@UI.Importance] : #High
         }
     ]
 );
@@ -112,12 +119,13 @@ annotate service.BusinessPartner with @(UI.Facets : [{
     ID     : 'FinancialRatiosQuaterly1',
     Target : 'financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly',
 },
-// {
-//     $Type  : 'UI.ReferenceFacet',
-//     Label  : 'Financial Ratios Quaterly',
-//     ID     : 'FinancialRatiosQuaterly1',
-//     Target : 'financialratios_qtr/@UI.Chart#FinancialRatiosQuaterly'
-// }
+{
+    $Type  : 'UI.ReferenceFacet',
+    Label  : 'Forecasted Income Statement',
+    ID     : 'PredictedIncomeStatements',
+    Target : 'IncomeStmnt_Predicted/@UI.LineItem#IncomeStatementPredicted',
+}
+
 ]);
 
 annotate service.BalanceSheet_Qtr with @(UI.LineItem #BalanceSheetQuaterly : [
@@ -428,19 +436,73 @@ annotate service.FinancialRatios_Qtr with @(UI.LineItem #FinancialRatiosQuaterly
     },
 ]);
 
-// annotate service.FinancialRatios_Qtr with @(
-//     UI.Chart #FinancialRatiosQuaterly: {
-//         Title : 'Test Chart',
-//         ChartType : #Column,
-//         Dimensions : [
-//             endDate
-//         ],
-//         Measures : [
-//             zscore
-//         ]
-//     }
-// ) ;
-
+annotate service.IncomeStmnt_Predicted with @(UI.LineItem #IncomeStatementPredicted : [
+    {
+        $Type : 'UI.DataField',
+        Value : P_Case,
+        Label : 'Case',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : endDate,
+        Label : 'End Date',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : totalRevenue,
+        Label : 'Total Revenue',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : costOfGoodSold,
+        Label : 'Cost of Goods Sold',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : SG_A_Expense,
+        Label : 'SG & A Expeneses',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : R_D_Expense,
+        Label : 'R&D Expenses',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : otherOperatingIncomeExpense,
+        Label : 'Other Operating Income Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : operatingProfit,
+        Label : 'Operating Profit',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : interestExpense,
+        Label : 'Interest Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : interestincome,
+        Label : 'Interest Income',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : OtherIncomeExpense,
+        Label : 'Other Income Expense',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : incomeTax,
+        Label : 'Income Tax',
+    },
+    {
+        $Type : 'UI.DataField',
+        Value : netIncomeAfterTax,
+        Label : 'Net Income After Tax',
+    },
+]);
 
 annotate service.BusinessPartner with {
     company_title @Common.Label : 'Company Title'

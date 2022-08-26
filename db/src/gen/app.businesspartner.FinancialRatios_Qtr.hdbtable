@@ -5,14 +5,7 @@ COLUMN TABLE app_businesspartner_FinancialRatios_Qtr (
   zscore DECIMAL,
   currentRatio DECIMAL,
   quickRatio DECIMAL,
-  liquidityRatio DECIMAL,
-  operatingRC DECIMAL,
-  liquidity DECIMAL,
   ebitda DECIMAL,
-  freeCashFlow DECIMAL,
-  grossDebt DECIMAL,
-  netDebt DECIMAL,
-  roace DECIMAL,
   returnOnSales DECIMAL,
   PRIMARY KEY(Company_header_ID, endDate)
 ) WITH ASSOCIATIONS (

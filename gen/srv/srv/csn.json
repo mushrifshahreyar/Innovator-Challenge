@@ -97,6 +97,27 @@
               ]
             }
           ]
+        },
+        "IncomeStmnt_Predicted": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "app.businesspartner.IncomeStmnt_Predicted",
+          "on": [
+            {
+              "ref": [
+                "IncomeStmnt_Predicted",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       }
     },
@@ -369,6 +390,19 @@
     },
     "app.businesspartner.FinancialRatios_Qtr": {
       "kind": "entity",
+      "@Aggregation.ApplySupported.$Type": "Aggregation.ApplySupportedType",
+      "@Aggregation.ApplySupported.GroupableProperties": [
+        {
+          "=": "zscore"
+        }
+      ],
+      "@Aggregation.ApplySupported.AggregatableProperties": [
+        {
+          "Property": {
+            "=": "zscore"
+          }
+        }
+      ],
       "elements": {
         "Company_header": {
           "key": true,
@@ -395,32 +429,94 @@
         "quickRatio": {
           "type": "cds.Decimal"
         },
-        "liquidityRatio": {
-          "type": "cds.Decimal"
-        },
-        "operatingRC": {
-          "type": "cds.Decimal"
-        },
-        "liquidity": {
-          "type": "cds.Decimal"
-        },
         "ebitda": {
-          "type": "cds.Decimal"
-        },
-        "freeCashFlow": {
-          "type": "cds.Decimal"
-        },
-        "grossDebt": {
-          "type": "cds.Decimal"
-        },
-        "netDebt": {
-          "type": "cds.Decimal"
-        },
-        "roace": {
           "type": "cds.Decimal"
         },
         "returnOnSales": {
           "type": "cds.Decimal"
+        }
+      }
+    },
+    "app.businesspartner.IncomeStmnt_Predicted": {
+      "kind": "entity",
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "app.businesspartner.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "P_Case": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "totalRevenue": {
+          "type": "cds.Decimal"
+        },
+        "costOfGoodSold": {
+          "type": "cds.Decimal"
+        },
+        "SG_A_Expense": {
+          "type": "cds.Decimal"
+        },
+        "R_D_Expense": {
+          "type": "cds.Decimal"
+        },
+        "otherOperatingIncomeExpense": {
+          "type": "cds.Decimal"
+        },
+        "operatingProfit": {
+          "type": "cds.Decimal"
+        },
+        "interestincome": {
+          "type": "cds.Decimal"
+        },
+        "interestExpense": {
+          "type": "cds.Decimal"
+        },
+        "OtherIncomeExpense": {
+          "type": "cds.Decimal"
+        },
+        "incomeTax": {
+          "type": "cds.Decimal"
+        },
+        "netIncomeAfterTax": {
+          "type": "cds.Decimal"
+        }
+      }
+    },
+    "app.businesspartner.Prediction_Rule": {
+      "kind": "entity",
+      "elements": {
+        "P_Case": {
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "GDP_Growth": {
+          "type": "cds.Integer64"
+        },
+        "Sales_Growth": {
+          "type": "cds.Integer64"
+        },
+        "COGS_Margin": {
+          "type": "cds.Integer64"
+        },
+        "Cost_Inflation": {
+          "type": "cds.Integer64"
+        },
+        "Taxes": {
+          "type": "cds.Integer64"
         }
       }
     },
@@ -525,6 +621,14 @@
           "@UI.Importance": {
             "#": "High"
           }
+        },
+        {
+          "$Type": "UI.DataFieldForAction",
+          "Label": "Predict Income Statement",
+          "Action": "BusinessPartnerService.PredictIncome",
+          "@UI.Importance": {
+            "#": "High"
+          }
         }
       ],
       "@UI.Facets": [
@@ -551,6 +655,12 @@
           "Label": "Financial Ratios Quaterly",
           "ID": "FinancialRatiosQuaterly1",
           "Target": "financialratios_qtr/@UI.LineItem#FinancialRatiosQuaterly"
+        },
+        {
+          "$Type": "UI.ReferenceFacet",
+          "Label": "Forecasted Income Statement",
+          "ID": "PredictedIncomeStatements",
+          "Target": "IncomeStmnt_Predicted/@UI.LineItem#IncomeStatementPredicted"
         }
       ],
       "projection": {
@@ -656,10 +766,34 @@
               ]
             }
           ]
+        },
+        "IncomeStmnt_Predicted": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "BusinessPartnerService.IncomeStmnt_Predicted",
+          "on": [
+            {
+              "ref": [
+                "IncomeStmnt_Predicted",
+                "Company_header"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       },
       "actions": {
         "CalcFinancialRatios": {
+          "kind": "action"
+        },
+        "PredictIncome": {
           "kind": "action"
         }
       }
@@ -1375,6 +1509,19 @@
           "Label": "Return on Sales"
         }
       ],
+      "@Aggregation.ApplySupported.$Type": "Aggregation.ApplySupportedType",
+      "@Aggregation.ApplySupported.GroupableProperties": [
+        {
+          "=": "zscore"
+        }
+      ],
+      "@Aggregation.ApplySupported.AggregatableProperties": [
+        {
+          "Property": {
+            "=": "zscore"
+          }
+        }
+      ],
       "projection": {
         "from": {
           "ref": [
@@ -1408,32 +1555,310 @@
         "quickRatio": {
           "type": "cds.Decimal"
         },
-        "liquidityRatio": {
-          "type": "cds.Decimal"
-        },
-        "operatingRC": {
-          "type": "cds.Decimal"
-        },
-        "liquidity": {
-          "type": "cds.Decimal"
-        },
         "ebitda": {
-          "type": "cds.Decimal"
-        },
-        "freeCashFlow": {
-          "type": "cds.Decimal"
-        },
-        "grossDebt": {
-          "type": "cds.Decimal"
-        },
-        "netDebt": {
-          "type": "cds.Decimal"
-        },
-        "roace": {
           "type": "cds.Decimal"
         },
         "returnOnSales": {
           "type": "cds.Decimal"
+        }
+      }
+    },
+    "BusinessPartnerService.IncomeStmnt_Predicted": {
+      "kind": "entity",
+      "@UI.LineItem#IncomeStatementPredicted": [
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "P_Case"
+          },
+          "Label": "Case"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "endDate"
+          },
+          "Label": "End Date"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "totalRevenue"
+          },
+          "Label": "Total Revenue"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "costOfGoodSold"
+          },
+          "Label": "Cost of Goods Sold"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "SG_A_Expense"
+          },
+          "Label": "SG & A Expeneses"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "R_D_Expense"
+          },
+          "Label": "R&D Expenses"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "otherOperatingIncomeExpense"
+          },
+          "Label": "Other Operating Income Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "operatingProfit"
+          },
+          "Label": "Operating Profit"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "interestExpense"
+          },
+          "Label": "Interest Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "interestincome"
+          },
+          "Label": "Interest Income"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "OtherIncomeExpense"
+          },
+          "Label": "Other Income Expense"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "incomeTax"
+          },
+          "Label": "Income Tax"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "netIncomeAfterTax"
+          },
+          "Label": "Net Income After Tax"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "app.businesspartner.IncomeStmnt_Predicted"
+          ]
+        }
+      },
+      "elements": {
+        "Company_header": {
+          "key": true,
+          "type": "cds.Association",
+          "target": "BusinessPartnerService.BusinessPartner",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
+        },
+        "endDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "P_Case": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "totalRevenue": {
+          "type": "cds.Decimal"
+        },
+        "costOfGoodSold": {
+          "type": "cds.Decimal"
+        },
+        "SG_A_Expense": {
+          "type": "cds.Decimal"
+        },
+        "R_D_Expense": {
+          "type": "cds.Decimal"
+        },
+        "otherOperatingIncomeExpense": {
+          "type": "cds.Decimal"
+        },
+        "operatingProfit": {
+          "type": "cds.Decimal"
+        },
+        "interestincome": {
+          "type": "cds.Decimal"
+        },
+        "interestExpense": {
+          "type": "cds.Decimal"
+        },
+        "OtherIncomeExpense": {
+          "type": "cds.Decimal"
+        },
+        "incomeTax": {
+          "type": "cds.Decimal"
+        },
+        "netIncomeAfterTax": {
+          "type": "cds.Decimal"
+        }
+      }
+    },
+    "BusinessPartnerService.Prediction_Rule": {
+      "kind": "entity",
+      "@UI.LineItem": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "Case",
+          "Value": {
+            "=": "P_Case"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "GDP Growth",
+          "Value": {
+            "=": "GDP_Growth"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Sales Growth",
+          "Value": {
+            "=": "Sales_Growth"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "COGS Margin",
+          "Value": {
+            "=": "COGS_Margin"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Cost Inflation",
+          "Value": {
+            "=": "Cost_Inflation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Taxes",
+          "Value": {
+            "=": "Taxes"
+          }
+        }
+      ],
+      "@UI.SelectionFields": [
+        {
+          "=": "P_Case"
+        }
+      ],
+      "@UI.HeaderInfo.Title.$Type": "UI.DataField",
+      "@UI.HeaderInfo.Title.Label": "Case",
+      "@UI.HeaderInfo.Title.Value": {
+        "=": "P_Case"
+      },
+      "@UI.HeaderInfo.TypeName": "Prediction Rule",
+      "@UI.HeaderInfo.TypeNamePlural": "Prediction Rules",
+      "@UI.FieldGroup#GeneratedGroup1.$Type": "UI.FieldGroupType",
+      "@UI.FieldGroup#GeneratedGroup1.Data": [
+        {
+          "$Type": "UI.DataField",
+          "Label": "Case",
+          "Value": {
+            "=": "P_Case"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "GDP Growth",
+          "Value": {
+            "=": "GDP_Growth"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Sales Growth",
+          "Value": {
+            "=": "Sales_Growth"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "COGS Margin",
+          "Value": {
+            "=": "COGS_Margin"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Cost Inflation",
+          "Value": {
+            "=": "Cost_Inflation"
+          }
+        },
+        {
+          "$Type": "UI.DataField",
+          "Label": "Taxes",
+          "Value": {
+            "=": "Taxes"
+          }
+        }
+      ],
+      "@UI.HeaderFacets": [
+        {
+          "$Type": "UI.ReferenceFacet",
+          "ID": "PR_GeneratedFacet1",
+          "Label": "Prediction Rules Detail",
+          "Target": "@UI.FieldGroup#GeneratedGroup1"
+        }
+      ],
+      "projection": {
+        "from": {
+          "ref": [
+            "app.businesspartner.Prediction_Rule"
+          ]
+        }
+      },
+      "elements": {
+        "P_Case": {
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "GDP_Growth": {
+          "type": "cds.Integer64"
+        },
+        "Sales_Growth": {
+          "type": "cds.Integer64"
+        },
+        "COGS_Margin": {
+          "type": "cds.Integer64"
+        },
+        "Cost_Inflation": {
+          "type": "cds.Integer64"
+        },
+        "Taxes": {
+          "type": "cds.Integer64"
         }
       }
     },

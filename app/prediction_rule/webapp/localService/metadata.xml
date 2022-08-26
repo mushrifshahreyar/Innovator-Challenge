@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Aggregation.V1.xml">
+        <edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="BusinessPartnerService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="BusinessPartner" EntityType="BusinessPartnerService.BusinessPartner">
+                    <NavigationPropertyBinding Path="balancesheet_qtr" Target="BalanceSheet_Qtr"/>
+                    <NavigationPropertyBinding Path="cashflowstatements_qtr" Target="CashflowStatements_Qtr"/>
+                    <NavigationPropertyBinding Path="incomestatements_qtr" Target="IncomeStatements_Qtr"/>
+                    <NavigationPropertyBinding Path="financialratios_qtr" Target="FinancialRatios_Qtr"/>
+                    <NavigationPropertyBinding Path="IncomeStmnt_Predicted" Target="IncomeStmnt_Predicted"/>
+                </EntitySet>
+                <EntitySet Name="BalanceSheet_Qtr" EntityType="BusinessPartnerService.BalanceSheet_Qtr">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+                <EntitySet Name="CashflowStatements_Qtr" EntityType="BusinessPartnerService.CashflowStatements_Qtr">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+                <EntitySet Name="IncomeStatements_Qtr" EntityType="BusinessPartnerService.IncomeStatements_Qtr">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+                <EntitySet Name="FinancialRatios_Qtr" EntityType="BusinessPartnerService.FinancialRatios_Qtr">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+                <EntitySet Name="IncomeStmnt_Predicted" EntityType="BusinessPartnerService.IncomeStmnt_Predicted">
+                    <NavigationPropertyBinding Path="Company_header" Target="BusinessPartner"/>
+                </EntitySet>
+                <EntitySet Name="Prediction_Rule" EntityType="BusinessPartnerService.Prediction_Rule"/>
+                <ActionImport Name="UpdateBalanceSheet" Action="BusinessPartnerService.UpdateBalanceSheet"/>
+            </EntityContainer>
+            <EntityType Name="BusinessPartner">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="company_title" Type="Edm.String"/>
+                <Property Name="company_code" Type="Edm.String"/>
+                <NavigationProperty Name="balancesheet_qtr" Type="Collection(BusinessPartnerService.BalanceSheet_Qtr)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="cashflowstatements_qtr" Type="Collection(BusinessPartnerService.CashflowStatements_Qtr)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="incomestatements_qtr" Type="Collection(BusinessPartnerService.IncomeStatements_Qtr)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="financialratios_qtr" Type="Collection(BusinessPartnerService.FinancialRatios_Qtr)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+                <NavigationProperty Name="IncomeStmnt_Predicted" Type="Collection(BusinessPartnerService.IncomeStmnt_Predicted)" Partner="Company_header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="BalanceSheet_Qtr">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="endDate"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="balancesheet_qtr">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="maxAge" Type="Edm.Int64"/>
+                <Property Name="cash" Type="Edm.Int64"/>
+                <Property Name="shortTermInvestments" Type="Edm.Int64"/>
+                <Property Name="netReceivables" Type="Edm.Int64"/>
+                <Property Name="inventory" Type="Edm.Int64"/>
+                <Property Name="otherCurrentAssets" Type="Edm.Int64"/>
+                <Property Name="totalCurrentAssets" Type="Edm.Int64"/>
+                <Property Name="propertyPlantEquipment" Type="Edm.Int64"/>
+                <Property Name="goodWill" Type="Edm.Int64"/>
+                <Property Name="intangibleAssets" Type="Edm.Int64"/>
+                <Property Name="otherAssets" Type="Edm.Int64"/>
+                <Property Name="totalAssets" Type="Edm.Int64"/>
+                <Property Name="accountsPayable" Type="Edm.Int64"/>
+                <Property Name="shortLongTermDebt" Type="Edm.Int64"/>
+                <Property Name="otherCurrentLiab" Type="Edm.Int64"/>
+                <Property Name="longTermDebt" Type="Edm.Int64"/>
+                <Property Name="otherLiab" Type="Edm.Int64"/>
+                <Property Name="minorityInterest" Type="Edm.Int64"/>
+                <Property Name="totalCurrentLiabilities" Type="Edm.Int64"/>
+                <Property Name="totalLiab" Type="Edm.Int64"/>
+                <Property Name="commonStock" Type="Edm.Int64"/>
+                <Property Name="retainedEarnings" Type="Edm.Int64"/>
+                <Property Name="treasuryStock" Type="Edm.Int64"/>
+                <Property Name="capitalSurplus" Type="Edm.Int64"/>
+                <Property Name="otherStockholderEquity" Type="Edm.Int64"/>
+                <Property Name="totalStockholderEquity" Type="Edm.Int64"/>
+                <Property Name="netTangibleAssets" Type="Edm.Int64"/>
+            </EntityType>
+            <EntityType Name="CashflowStatements_Qtr">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="endDate"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="cashflowstatements_qtr">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="maxAge" Type="Edm.Int64"/>
+                <Property Name="netIncome" Type="Edm.Int64"/>
+                <Property Name="depreciation" Type="Edm.Int64"/>
+                <Property Name="changeToNetincome" Type="Edm.Int64"/>
+                <Property Name="changeToAccountReceivables" Type="Edm.Int64"/>
+                <Property Name="changeToLiabilities" Type="Edm.Int64"/>
+                <Property Name="changeToInventory" Type="Edm.Int64"/>
+                <Property Name="changeToOperatingActivities" Type="Edm.Int64"/>
+                <Property Name="totalCashFromOperatingActivities" Type="Edm.Int64"/>
+                <Property Name="capitalExpenditures" Type="Edm.Int64"/>
+                <Property Name="investments" Type="Edm.Int64"/>
+                <Property Name="totalCashflowsFromInvestingActivities" Type="Edm.Int64"/>
+                <Property Name="netBorrowings" Type="Edm.Int64"/>
+                <Property Name="otherCashflowsFromFinancingActivities" Type="Edm.Int64"/>
+                <Property Name="totalCashFromFinancingActivities" Type="Edm.Int64"/>
+                <Property Name="effectOfExchangeRate" Type="Edm.Int64"/>
+                <Property Name="changeInCash" Type="Edm.Int64"/>
+                <Property Name="issuanceOfStock" Type="Edm.Int64"/>
+            </EntityType>
+            <EntityType Name="IncomeStatements_Qtr">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="endDate"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="incomestatements_qtr">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="maxAge" Type="Edm.Int64"/>
+                <Property Name="totalRevenue" Type="Edm.Int64"/>
+                <Property Name="costOfRevenue" Type="Edm.Int64"/>
+                <Property Name="grossProfit" Type="Edm.Int64"/>
+                <Property Name="researchDevelopment" Type="Edm.Int64"/>
+                <Property Name="sellingGeneralAdministrative" Type="Edm.Int64"/>
+                <Property Name="nonRecurring" Type="Edm.Int64"/>
+                <Property Name="otherOperatingExpenses" Type="Edm.Int64"/>
+                <Property Name="totalOperatingExpenses" Type="Edm.Int64"/>
+                <Property Name="operatingIncome" Type="Edm.Int64"/>
+                <Property Name="totalOtherIncomeExpenseNet" Type="Edm.Int64"/>
+                <Property Name="ebit" Type="Edm.Int64"/>
+                <Property Name="interestExpense" Type="Edm.Int64"/>
+                <Property Name="incomeBeforeTax" Type="Edm.Int64"/>
+                <Property Name="incomeTaxExpense" Type="Edm.Int64"/>
+                <Property Name="minorityInterest" Type="Edm.Int64"/>
+                <Property Name="netIncomeFromContinuingOps" Type="Edm.Int64"/>
+                <Property Name="discontinuedOperations" Type="Edm.Int64"/>
+                <Property Name="extraordinaryItems" Type="Edm.Int64"/>
+                <Property Name="effectOfAccountingCharges" Type="Edm.Int64"/>
+                <Property Name="otherItems" Type="Edm.Int64"/>
+                <Property Name="netIncome" Type="Edm.Int64"/>
+                <Property Name="netIncomeApplicableToCommonShares" Type="Edm.Int64"/>
+            </EntityType>
+            <EntityType Name="FinancialRatios_Qtr">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="endDate"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="financialratios_qtr">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="zscore" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="currentRatio" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="quickRatio" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="ebitda" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="returnOnSales" Type="Edm.Decimal" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="IncomeStmnt_Predicted">
+                <Key>
+                    <PropertyRef Name="Company_header_ID"/>
+                    <PropertyRef Name="endDate"/>
+                    <PropertyRef Name="P_Case"/>
+                </Key>
+                <NavigationProperty Name="Company_header" Type="BusinessPartnerService.BusinessPartner" Partner="IncomeStmnt_Predicted">
+                    <ReferentialConstraint Property="Company_header_ID" ReferencedProperty="ID"/>
+                </NavigationProperty>
+                <Property Name="Company_header_ID" Type="Edm.Int32" Nullable="false"/>
+                <Property Name="endDate" Type="Edm.DateTimeOffset" Precision="7" Nullable="false"/>
+                <Property Name="P_Case" Type="Edm.String" Nullable="false"/>
+                <Property Name="totalRevenue" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="costOfGoodSold" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="SG_A_Expense" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="R_D_Expense" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="otherOperatingIncomeExpense" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="operatingProfit" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="interestincome" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="interestExpense" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="OtherIncomeExpense" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="incomeTax" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="netIncomeAfterTax" Type="Edm.Decimal" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="Prediction_Rule">
+                <Key>
+                    <PropertyRef Name="P_Case"/>
+                </Key>
+                <Property Name="P_Case" Type="Edm.String" MaxLength="20" Nullable="false"/>
+                <Property Name="GDP_Growth" Type="Edm.Int64"/>
+                <Property Name="Sales_Growth" Type="Edm.Int64"/>
+                <Property Name="COGS_Margin" Type="Edm.Int64"/>
+                <Property Name="Cost_Inflation" Type="Edm.Int64"/>
+                <Property Name="Taxes" Type="Edm.Int64"/>
+            </EntityType>
+            <Action Name="CalcFinancialRatios" IsBound="true">
+                <Parameter Name="in" Type="BusinessPartnerService.BusinessPartner"/>
+            </Action>
+            <Action Name="PredictIncome" IsBound="true">
+                <Parameter Name="in" Type="BusinessPartnerService.BusinessPartner"/>
+            </Action>
+            <Action Name="UpdateBalanceSheet" IsBound="false"/>
+            <Annotations Target="BusinessPartnerService.FinancialRatios_Qtr">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>zscore</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="zscore"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="BusinessPartnerService.EntityContainer/FinancialRatios_Qtr">
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record Type="Aggregation.ApplySupportedType">
+                        <PropertyValue Property="GroupableProperties">
+                            <Collection>
+                                <PropertyPath>zscore</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="AggregatableProperties">
+                            <Collection>
+                                <Record Type="Aggregation.AggregatablePropertyType">
+                                    <PropertyValue Property="Property" PropertyPath="zscore"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

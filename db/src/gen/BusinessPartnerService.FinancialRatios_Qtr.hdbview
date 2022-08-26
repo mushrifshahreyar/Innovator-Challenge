@@ -5,14 +5,7 @@ VIEW BusinessPartnerService_FinancialRatios_Qtr AS SELECT
   FinancialRatios_Qtr_0.zscore,
   FinancialRatios_Qtr_0.currentRatio,
   FinancialRatios_Qtr_0.quickRatio,
-  FinancialRatios_Qtr_0.liquidityRatio,
-  FinancialRatios_Qtr_0.operatingRC,
-  FinancialRatios_Qtr_0.liquidity,
   FinancialRatios_Qtr_0.ebitda,
-  FinancialRatios_Qtr_0.freeCashFlow,
-  FinancialRatios_Qtr_0.grossDebt,
-  FinancialRatios_Qtr_0.netDebt,
-  FinancialRatios_Qtr_0.roace,
   FinancialRatios_Qtr_0.returnOnSales
 FROM app_businesspartner_FinancialRatios_Qtr AS FinancialRatios_Qtr_0
 WITH ASSOCIATIONS (
